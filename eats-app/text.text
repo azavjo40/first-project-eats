@@ -1,0 +1,5 @@
+     <NavLink to="/" >Home</NavLink>
+      <NavLink to="/menu" >Menu</NavLink>
+      <NavLink to="/basket" >Basket</NavLink>
+      <NavLink to="/contact" >Contact</NavLink>
+   
