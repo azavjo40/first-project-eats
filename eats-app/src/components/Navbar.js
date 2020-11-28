@@ -17,7 +17,7 @@ import {NavLink} from 'react-router-dom'
     <Nav.Link> <NavLink className="linkBar" to="/basket">Basket</NavLink> </Nav.Link>
     <Nav.Link> <NavLink className="linkBar" to="/blog">Blog</NavLink></Nav.Link>
     <Nav.Link><NavLink className="linkBar" to="/contact">Contact</NavLink></Nav.Link>
-    
+    <Nav.Link><NavLink className="linkBar" to="/auth">Check to login</NavLink></Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

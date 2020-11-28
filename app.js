@@ -1,15 +1,20 @@
 const express = require('express')
 const config = require('config')
 //const path = require('path')
+const morgan = require('morgan')
 const mongoose = require('mongoose')
-
+const cors = require('cors')
 const app = express()
 
 app.use(express.json({ extended: true }))
 
 app.use('/api/auth', require('./routes/auth.routes'))
 
+//cors
+app.use(cors)
 
+// смотрить запрос
+app.use(morgan('dev'))
 
 // тут даем фронтент если продакшн то что бы указать статичиский папку наш
 
@@ -20,6 +25,7 @@ app.use('/api/auth', require('./routes/auth.routes'))
   //  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   //})
 //}
+
 
 const PORT = process.env.PORT || config.get('port') || 5000
 

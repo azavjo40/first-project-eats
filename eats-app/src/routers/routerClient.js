@@ -7,7 +7,8 @@ import Product from '../pages/Product'
 import Contact from '../pages/Contact'
 import Blog from '../pages/Blog'
 import Order from '../pages/Order'
-import Create from '../pages/Create'
+import Create from '../pages/Create' 
+import Auth from '../pages/Auth'
 
 function useRouters(isAuthUser ){
 
@@ -91,6 +92,10 @@ function useRouters(isAuthUser ){
           <Route path="/poduct/:id" exact >
                <Product />
            </Route>
+
+           <Route path="/auth" exact >
+              <Auth />
+          </Route>
 
               <Redirect to="/create" />
     
