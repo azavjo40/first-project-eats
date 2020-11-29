@@ -5,7 +5,7 @@ import Eastnas from './components/Navbar'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import EastnasUser from './components/NavbarUser';
-
+import 'materialize-css'
 
 function App() {
   const isAuthUser = false
