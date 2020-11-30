@@ -18,7 +18,7 @@ setIsloading( !isLoading )
 <Button 
 size="lg" block
 style={{marginTop: "3rem"}}
-variant="warning"
+variant="primary"
 onClick={handlChange} 
 >
   {isLoading ?  "Go to Register" :"Go to Login"}

@@ -27,9 +27,9 @@ const { request, loading, error, clearError} = useHttp()
 const loginHandler = async () =>{
   try{
   const data = await request('/api/auth/login','POST', {...form})
-    message(data.name)
+    message(data.message)
   
-   
+
   }catch(e){}
   }
 
@@ -67,7 +67,7 @@ const loginHandler = async () =>{
    onClick={loginHandler}
    disabled={loading}
    >
-    Submit
+   Login
   </Button>
 </Form>
  
