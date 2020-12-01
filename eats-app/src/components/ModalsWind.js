@@ -1,7 +1,15 @@
 import {Modal,Button} from 'react-bootstrap'
-
-
+import { useState } from 'react'
+import ModalsAdress from '../components/ModalsAdress'
+import ModalsOrder from '../components/ModalsOrder'
 function MyVerticallyCenteredModal(props) {
+    const [isLoading, setIsloading] = useState(false)
+
+   const handlChange = (e)=>{
+    e.preventDefault()
+    setIsloading( !isLoading )
+    }
+
     return (
       <Modal
         {...props}
@@ -9,33 +17,10 @@ function MyVerticallyCenteredModal(props) {
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Modal heading
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-          </p>
-        </Modal.Body>
+        
+        {isLoading ?<ModalsAdress /> :  <ModalsOrder />}
         <Modal.Footer>
-          <Button onClick={props.onHide}>Close</Button>
+    <Button onClick={handlChange }>{isLoading ? 'Add Adress' : 'Add Order'}</Button>
         </Modal.Footer>
       </Modal>
     );
