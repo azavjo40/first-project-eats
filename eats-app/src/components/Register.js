@@ -29,7 +29,7 @@ function Register() {
         
       const data = await  request('/api/auth/register','POST',{...form})
       message(data.message)
-        
+      setForm({ name: '', surname: '', email: '', password: '', phone: ''})
       
       } catch (e) {}
     }

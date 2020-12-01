@@ -11,7 +11,7 @@ const [form, setForm] = useState({ email: '', password: ''})
 
 const changehandler = (event)=>{
   setForm({...form, [event.target.name]: event.target.value })
-
+  
 } 
 
 //const [mess, setMess] = useState(null)
@@ -28,7 +28,7 @@ const loginHandler = async () =>{
   try{
   const data = await request('/api/auth/login','POST', {...form})
     message(data.message)
-  
+    setForm({ email: '', password: ''})
 
   }catch(e){}
   }
