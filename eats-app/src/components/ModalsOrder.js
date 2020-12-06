@@ -1,4 +1,4 @@
-import {Modal} from 'react-bootstrap'
+import {Modal, Button, Form, Row, Col} from 'react-bootstrap'
 
 
 function ModalsOrder() {
@@ -10,18 +10,54 @@ function ModalsOrder() {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>Centered Modal</h4>
-          <p>
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-            consectetur ac, vestibulum at eros.
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-           
-          </p>
+          <h1>Wybierz Sos</h1>
+        <Form.Group as={Row}>
+      <Col sm={10}>
+        <Form.Check
+          type="radio"
+          label="ostry"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios1"
+        />
+        <Form.Check
+          type="radio"
+          label="mieszanie"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios2"
+        />
+        <Form.Check
+          type="radio"
+          label="łagodny"
+          name="formHorizontalRadios"
+          id="formHorizontalRadios3"
+        />
+      </Col>
+    </Form.Group>
         </Modal.Body>
+
+        <Modal.Body>
+       <h1>order</h1>
+       <Form.Group id="formGridCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  <Form.Group id="formGridCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+  <Form.Group id="formGridCheckbox">
+    <Form.Check type="checkbox" label="Check me out" />
+  </Form.Group>
+        </Modal.Body>
+
+        <Modal.Body>
+       <h1>order</h1>
+       <Form.Row>
+        <Button variant="outline-danger">-</Button>{' '}
+<h1>00</h1>
+
+   <Button variant="outline-success">+</Button>{' '}
+  </Form.Row>
+        </Modal.Body>
+    
      </>
     );
   }

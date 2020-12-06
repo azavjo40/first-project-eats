@@ -5,6 +5,7 @@ import ModalsOrder from '../components/ModalsOrder'
 function MyVerticallyCenteredModal(props) {
     const [isLoading, setIsloading] = useState(false)
 
+
    const handlChange = (e)=>{
     e.preventDefault()
     setIsloading( !isLoading )
@@ -20,7 +21,7 @@ function MyVerticallyCenteredModal(props) {
         
         {isLoading ?<ModalsAdress /> :  <ModalsOrder />}
         <Modal.Footer>
-    <Button onClick={handlChange }>{isLoading ? 'Add Adress' : 'Add Order'}</Button>
+    <Button onClick={handlChange }>{isLoading ?'Back To Orders': 'Add Adress'   }</Button>
         </Modal.Footer>
       </Modal>
     );
