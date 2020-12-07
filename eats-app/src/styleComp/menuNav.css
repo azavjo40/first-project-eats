@@ -1,0 +1,67 @@
+.menuNav{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+    background-color: #343a40;
+   z-index: 1;
+    
+    }
+
+    .menuNav a{
+         text-decoration: none;
+         color: white;
+         
+    }
+
+    .menuNav h3{
+        color: white;
+    }
+
+@media only screen and (max-width: 550px) {
+.menuNav{
+  display: none;
+    }
+  
+  }
+
+  .openMenu{
+display: block;
+position: relative;
+z-index: 10;
+
+  }
+  .openMenu img{ 
+      width: 30px;
+      cursor: pointer;
+  }
+  
+  @media only screen and (min-width: 550px) {
+    .openMenu{
+       display: none;
+         }
+         
+       }
+
+
+  .openM{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+    background-color: #343a40;
+    }
+
+    .openM a{
+        text-decoration: none;
+        color: white;
+        
+   }
+
+   .openM h3{
+    color: white;
+}

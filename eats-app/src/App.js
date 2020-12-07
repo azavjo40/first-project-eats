@@ -1,11 +1,11 @@
 
 import {BrowserRouter as Router} from 'react-router-dom'
 import useRouters from './routers/routerClient';
-import Eastnas from './components/Navbar'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import EastnasUser from './components/NavbarUser';
 import 'materialize-css'
+import MenuNav from './components/MenuNav';
 
 function App() {
   const isAuthUser = false
@@ -13,8 +13,8 @@ function App() {
   return (
     <>
     <Router > 
-  { isAuthUser ? <EastnasUser /> : <Eastnas /> }
-    <div className="container"> 
+  { isAuthUser ? <EastnasUser /> : <MenuNav/> }
+    <div> 
      {routers}
       
     </div>

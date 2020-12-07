@@ -1,11 +1,4 @@
 
-
-.linkBar {
-    color: aliceblue;
-    margin: auto;
-}
-
-
 #toast-container{
     width: 100%;
     height: 30px;
@@ -24,9 +17,4 @@
     text-align: center;
 }
 
-
-.MyKards{
-    width: 16rem;
-    margin: 2rem;
-}
 

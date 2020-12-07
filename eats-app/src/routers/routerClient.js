@@ -2,7 +2,6 @@ import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import Home from '../pages/Home'
 import Menu from '../pages/Menu'
-import Basket from '../pages/Basket'
 import Product from '../pages/Product'
 import Contact from '../pages/Contact'
 import Blog from '../pages/Blog'
@@ -40,9 +39,6 @@ function useRouters(isAuthUser ){
               <Product />
           </Route>
 
-          <Route path="/basket"exact >
-              <Basket />
-          </Route>
 
           <Route path="/contact" exact >
               <Contact />
@@ -77,9 +73,7 @@ function useRouters(isAuthUser ){
               <Product />
           </Route>
 
-          <Route path="/basket"exact >
-              <Basket />
-          </Route>
+        
 
           <Route path="/contact" exact >
               <Contact />

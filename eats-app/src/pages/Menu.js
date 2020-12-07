@@ -1,23 +1,39 @@
-import React from 'react'
-import {Row} from 'react-bootstrap'
-import CardsKebab from '../components/CardsKebab'
+import { useState } from 'react'
+import '../styleComp/cardMenu.css'
+import CartMenu from '../components/CardMenu'
+import CartBasket from '../components/CartBasket'
+import basket from '../images/basket.png'
+import back from '../images/back.png'
 function Menu() {
-  return (
-  
+  // тут забераем карть на которий нажали
+  const [cart, setCart] = useState([])
 
-<div className="gdid" >
-<Row  className="justify-content-md-center"  style={{justifyContent: 'space-around'}}>
-  <CardsKebab />
-  <CardsKebab />
-  <CardsKebab />
-  <CardsKebab />
-  <CardsKebab />
-  <CardsKebab />
-  </Row>
-  </div>
+  // перекулчения с карта на продукта 
+  const [page, setPage] = useState(true)
 
-    
-  )
+
+ // фн для збор карт нужна продукт указать как обект а не как масив
+ const addToCart = (product)=>{
+    setCart([...cart, {...product}])
+    //console.log(product)
+  }
+
+// фн удаления с карта 
+const removeFromCart = (productToRemove)=>{
+setCart(cart.filter(product => product !== productToRemove ))
+}
+
+return(
+  <div className="cont">
+  <header className="header">
+     <img src={back} alt="icon"  onClick={()=>{setPage(true)} } /> 
+<h1 >{ page ? cart.length : '' }</h1>
+    <img src={basket} alt="icon"  onClick={()=>{setPage(false)} } />
+  </header>
+  {page ? <CartMenu addToCart={addToCart} />: <CartBasket removeFromCart={removeFromCart} cart={cart}/>}
+</div>
+)
+ 
 }
 
 export default Menu
