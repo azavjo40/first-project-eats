@@ -11,9 +11,9 @@
     }
 
     .menuNav a{
-         text-decoration: none;
          color: white;
-         
+         text-decoration: none;
+         padding-top: 10px;
     }
 
     .menuNav h3{
@@ -57,11 +57,14 @@ z-index: 10;
     }
 
     .openM a{
-        text-decoration: none;
+     text-decoration: none;
         color: white;
         
    }
-
    .openM h3{
     color: white;
+}
+
+.closeMenu {
+display: none;
 }

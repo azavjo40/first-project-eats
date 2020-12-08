@@ -10,17 +10,18 @@ function MenuNav() {
  }
   return(
       <>
- <div className={isLoad ? 'openM' : 'menuNav'} >
+ <div className={isLoad ? 'openM' : 'menuNav'} onClick={()=>setIsLoad(false)}>
      <h3>East-Kebab</h3>
-<a><NavLink  to="/">Home</NavLink></a>
-<a><NavLink   to="/menu">Menu</NavLink></a>
-<a><NavLink to="/contact">Contact</NavLink></a>
-<a><NavLink  to="/contact">Contact</NavLink></a>
-<a><NavLink  to="/auth">Check to login</NavLink></a>
+<p><NavLink  to="/">Home</NavLink></p>
+<p><NavLink   to="/menu">Menu</NavLink></p>
+<p><NavLink to="/contact">Contact</NavLink></p>
+<p><NavLink  to="/contact">Contact</NavLink></p>
+<p><NavLink  to="/auth">Check to login</NavLink></p>
  </div>
-<div className="openMenu"> 
+ <div className={isLoad ? 'closeMenu' : 'openMenu'}> 
 <img src={open}  alt="open"  onClick={openMenu} />
 </div>
+
  </>
     )
 }

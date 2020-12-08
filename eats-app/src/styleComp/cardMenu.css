@@ -26,18 +26,13 @@
    justify-content: space-around;
    align-items: center;
 
-    width: 200px;
+    width: 30%;
     order: 0;
     flex: 0 1 auto;
     align-self: auto;
     padding: 20px;
 }
 
-.button{
-    font-size: 20px;
-    height: 30px;
-    margin: 10px;
-}
 .header{
     display: flex;
     justify-content: space-around;
@@ -69,7 +64,7 @@
   }
 @media only screen and (max-width: 425px) {
     .product{
-     width: 45%;
+     width: 80%;
     }
   }
 

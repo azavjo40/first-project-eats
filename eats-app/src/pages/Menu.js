@@ -30,7 +30,7 @@ return(
 <h1 >{ page ? cart.length : '' }</h1>
     <img src={basket} alt="icon"  onClick={()=>{setPage(false)} } />
   </header>
-  {page ? <CartMenu addToCart={addToCart} />: <CartBasket removeFromCart={removeFromCart} cart={cart}/>}
+  {page ? <CartMenu addToCart={addToCart} />: <CartBasket    removeFromCart={removeFromCart} cart={cart}/>}
 </div>
 )
  

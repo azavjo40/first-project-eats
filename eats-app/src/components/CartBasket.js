@@ -7,13 +7,13 @@ function CartBasket({cart, removeFromCart}) {
     
     
     <div className="products" >
-    {cart.map((product, index)=> (
+    {cart.map((product, i)=> (
     <>
-    <div className="product" key={index}>
-    <h3>{product.name}</h3>
-    <h4>{product.cost}</h4>
-    <img src={product.image }  alt={product.name} className="imgProduct" />
-     <img src={remove} alt="icon"  onClick={()=>removeFromCart(product)} className="iconRemove" />
+    <div className="product" key={i} >
+    <h3 >{product.name}</h3>
+    <h4 >{product.cost}</h4>
+    <img  src={product.image }  alt={product.name} className="imgProduct" />
+     <img  src={remove} alt="icon"  onClick={()=>removeFromCart(product)} className="iconRemove" />
     </div>
     </>
     ))}

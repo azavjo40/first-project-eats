@@ -24,13 +24,13 @@ function CardMenu({addToCart}) {
 return(
 <>
 <div className="products" >
-{products.map((product, index)=> (
+{products.map((product)=> (
 <>
-<div className="product" key={index}>
+<div className="product" >
 
-<h3>{product.name}</h3>
-<h4>{product.cost}</h4>
-<img src={product.image }  alt={product.name} className="imgProduct" />
+<h3   >{product.name}</h3>
+<h4 >{product.cost}</h4>
+<img  src={product.image }  alt={product.name} className="imgProduct" />
 <img src={add} alt="icon"  onClick={()=> addToCart(product)} className="iconRemove"   />
 </div>
 </>
