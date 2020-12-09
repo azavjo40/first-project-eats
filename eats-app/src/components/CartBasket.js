@@ -1,24 +1,21 @@
 import React from 'react'
 import '../styleComp/cardMenu.css'
-import remove from '../images/remove.png'
 function CartBasket({cart, removeFromCart}) {
   return(
+
     <>
-    
-    
     <div className="products" >
-    {cart.map((product, i)=> (
+    {cart.map((product)=> (
     <>
-    <div className="product" key={i} >
-    <h3 >{product.name}</h3>
-    <h4 >{product.cost}</h4>
-    <img  src={product.image }  alt={product.name} className="imgProduct" />
-     <img  src={remove} alt="icon"  onClick={()=>removeFromCart(product)} className="iconRemove" />
+    <div className="product" >
+      <img  src={product.image }  alt={product.name} className="imgProduct" />
+      <h5   >{product.name}</h5> 
+    <p>{product.p}</p>
+    <p >{product.cost}<button onClick={()=>removeFromCart(product)} >Remove</button> </p>
     </div>
     </>
     ))}
     </div>
-    
     </>
     )
 

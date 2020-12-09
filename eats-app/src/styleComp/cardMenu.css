@@ -1,3 +1,30 @@
+
+.header h1 {
+    color:#2979ff ;
+}
+
+  .header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    
+}
+.header button{
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    margin: 10px;
+}
+
+
+
+
+
+
+
 .cont{
     display: flex;
     flex-direction: column;
@@ -6,7 +33,6 @@
     align-content: stretch;
     align-items: center;
 }
-
 .products{
     display: flex;
     flex-direction: row;
@@ -22,50 +48,30 @@
 .product{
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
-   justify-content: space-around;
-   align-items: center;
-
-    width: 30%;
-    order: 0;
-    flex: 0 1 auto;
-    align-self: auto;
-    padding: 20px;
-}
-
-.header{
-    display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: stretch;
     align-items: center;
-    height: 40px;
-    width: 100%;
+    width: 30%;
+}
+.product p button{
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    margin: 10px;
     
 }
-.header img{
-    width: 30px;
-    cursor: pointer;
-}
-
-.header h1 {
-    color:#2979ff ;
-}
-
-.iconRemove{
-    width: 40px;
-    cursor: pointer;
-}
 
 
-.iconRemove:hover,  .header img:hover{
-    background-color: #d500f9 ;
-    border-radius: 30px;
-    transition: 0.5s;
-    
-  }
+
 @media only screen and (max-width: 425px) {
     .product{
-     width: 80%;
+     width: 100%;
+ 
     }
   }
-
-
+  .product img{
+    width: 100%;
+  }
+   

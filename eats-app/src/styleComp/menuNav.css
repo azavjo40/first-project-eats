@@ -18,8 +18,15 @@
 
     .menuNav h3{
         color: white;
+        cursor: pointer;
     }
+.h1Close{
+  color: red;
+}
 
+.h1Close:hover{
+  color: white;
+}
 @media only screen and (max-width: 550px) {
 .menuNav{
   display: none;
@@ -34,7 +41,7 @@ z-index: 10;
 
   }
   .openMenu img{ 
-      width: 30px;
+      width: 50px;
       cursor: pointer;
   }
   
@@ -42,7 +49,9 @@ z-index: 10;
     .openMenu{
        display: none;
          }
-         
+         .h1Close{
+           display: none;
+         }
        }
 
 
