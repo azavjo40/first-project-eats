@@ -9,6 +9,11 @@ app.use(express.json({ extended: true }))
 
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/auth', require('./routes/auth.contact'))
+app.use('/api/order', require('./routes/order'))
+
+// что бы файл статичиска нашли получать  доступ на примую с клента
+app.use('/uploads',express.static('uploads'))
+
 //cors
 app.use(cors)
 

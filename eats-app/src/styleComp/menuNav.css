@@ -21,7 +21,8 @@
         cursor: pointer;
     }
 .h1Close{
-  color: red;
+  color:white;
+  cursor: pointer;
 }
 
 .h1Close:hover{
@@ -33,11 +34,11 @@
     }
   
   }
-
   .openMenu{
 display: block;
 position: relative;
 z-index: 10;
+transition: 1s;
 
   }
   .openMenu img{ 
@@ -63,6 +64,9 @@ z-index: 10;
     align-content: stretch;
     align-items: center;
     background-color: #343a40;
+    position: fixed;
+    width: 100%;
+  
     }
 
     .openM a{
