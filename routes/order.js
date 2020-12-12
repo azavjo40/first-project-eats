@@ -3,22 +3,32 @@ const router = Router()
 const upload = require('../midlleware/upload')
 const  errorHandlier = require('../utils/errorHandlier')
 const Order = require('../models/Order')
-router.post('/',upload.single('image'), async(req, res)=>{
+const passport = require('passport')
+
+
+router.post('/order',
+passport.authenticate('jwt',{session: false}),
+upload.single('image'),
+ async(req, res)=>{
  try{
-    const { name, paragraph, cost} = req.body
+    console.log(req.body)
+
     const order = new Order({
-     imageSrc: req.file ? req.file.path : '',
-     name: name,
-     paragraph: paragraph,
-     cost: cost
-    })
-
+      name: req.body.name,
+      cost: req.body.cost,
+      p: req.body.p,
+      user: req.user.id,
+      // провераем если есть файл иначе добавлаем пустой строка
+      imageSrc: req.file ? req.file.path : ''
+    
+   })
+  
     await order.save()
-
-    res.status(201).json(order)
-
+  res.status(201).json(order)
+console.log(order)
  }catch(e){
 errorHandlier(res, e)
+
  }
 
 })

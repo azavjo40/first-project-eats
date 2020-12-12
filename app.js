@@ -1,15 +1,18 @@
 const express = require('express')
 const config = require('config')
+const passport = require('passport')
 //const path = require('path')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
+
+
 app.use(express.json({ extended: true }))
 
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/auth', require('./routes/auth.contact'))
-app.use('/api/order', require('./routes/order'))
+app.use('/api', require('./routes/order'))
 
 // что бы файл статичиска нашли получать  доступ на примую с клента
 app.use('/uploads',express.static('uploads'))
@@ -29,6 +32,11 @@ app.use(morgan('dev'))
   //  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
   //})
 //}
+
+//passport.js
+app.use(passport.initialize())
+// передаем паспорт
+require('./midlleware/passport')(passport)
 
 
 const PORT = process.env.PORT || config.get('port') || 5000
