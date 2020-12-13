@@ -39,11 +39,6 @@ function useRouters(isAuthUser ){
               <Product />
           </Route>
 
-
-          <Route path="/contact" exact >
-              <Contact />
-          </Route>
-
           <Route path="/blog" exact >
               <Blog />
           </Route>
@@ -69,11 +64,6 @@ function useRouters(isAuthUser ){
               <Menu />
           </Route>
 
-          <Route path="/product/:id" >
-              <Product />
-          </Route>
-
-        
 
           <Route path="/contact" exact >
               <Contact />
@@ -83,16 +73,12 @@ function useRouters(isAuthUser ){
               <Blog />
           </Route>
 
-          <Route path="/poduct/:id" exact >
-               <Product />
-           </Route>
 
            <Route path="/auth" exact >
               <Auth />
           </Route>
 
-              <Redirect to="/create" />
-    
+          <Redirect to="/" />
       </Switch>
       )
 }

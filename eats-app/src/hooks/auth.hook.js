@@ -17,7 +17,7 @@ const login = useCallback((jwtToken, id)=>{
     setUserId(id)
     //запис в локолстороч
     localStorage.setItem(stotageName, JSON.stringify({
-        userId:id , token: jwtToken
+        userId: id , token: jwtToken
     }))
 },[])
 

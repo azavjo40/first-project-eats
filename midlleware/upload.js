@@ -10,7 +10,8 @@ const storage = multer.diskStorage({
     },
     filename(req, file, cb){
         // создаем перемена с названия файла с помощию moment
-        const date =  moment().format('DDMMYYYY-HHmmss_SSS')
+        //const date =  moment().format('DDMMYYYY-HHmmss_SSS')
+        const date = Date.now()
      // тут назваем файла 
      cb(null,`${date}-${file.originalname}`)
      

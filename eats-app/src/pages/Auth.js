@@ -16,8 +16,8 @@ setIsloading( !isLoading )
 
     {isLoading ? <Login /> : <Register />}
 <Button 
-size="lg" block
-style={{marginTop: "3rem"}}
+
+style={{marginTop: "3rem", marginLeft: '35%'}}
 variant="primary"
 onClick={handlChange} 
 >

@@ -1,30 +1,47 @@
-import React from 'react'
-import { Navbar,Nav} from 'react-bootstrap'
-import {NavLink} from 'react-router-dom'
+
+import {useState, useContext} from 'react'
+import {NavLink, useHistory} from 'react-router-dom'
+import { AuthContext } from '../context/AuthContext'
+import open from '../images/openMenu.png'
+import '../styleComp/menuNav.css'
+
+function EastnasUser() {
+    const history = useHistory()
+    // auth для выйти с сайта очистить 
+    const atuthLo = useContext(AuthContext)
+
+  // фн для очиски локолстороч что бы выйти 
+    const logoutHandler = event => {
+      event.preventDefault()
+      atuthLo.logout()
+      // для очиска хистория бравзер 
+      history.push('/')
+
+    }
+
+  const [isLoad, setIsLoad]  =  useState(false)
+ const openMenu = e=>{
+     setIsLoad(!isLoad)
+ }
 
 
-       const EastnasUser = ()=>{
-   return(
-     <>
-  <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-  <Navbar.Brand >My-Create-East-kebab</Navbar.Brand>
-  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-  <Navbar.Collapse id="responsive-navbar-nav">
+  return(
+    <>
+    <div className={isLoad ? 'openM' : 'menuNav'} onClick={()=>setIsLoad(false)}>
+    <h3>Personal-Area</h3>
+   <p><NavLink  to="/">Home</NavLink></p>
+   <p><NavLink   to="/menu">Menu</NavLink></p>
+   <p><NavLink   to="/blog">Blog</NavLink></p>
+   <p><NavLink className="linkBar" to="/create">Create</NavLink></p>
+   <p><NavLink className="linkBar" to="/Order">Order</NavLink></p>
+   <p onClick={logoutHandler } style={{color: 'white', cursor: 'pointer'}}>Go Out</p>
+   <h1 className="h1Close">x</h1>
+    </div>
+    <div className={isLoad ? 'closeMenu' : 'openMenu'}> 
+   <img src={open}  alt="open"  onClick={openMenu} />
+   </div>
    
-    <Nav className="mr-auto " >
-    <Nav.Link><NavLink className="linkBar" to="/">Home</NavLink> </Nav.Link>
-    <Nav.Link> <NavLink className="linkBar"  to="/menu">Menu</NavLink> </Nav.Link>
-    <Nav.Link> <NavLink className="linkBar" to="/basket">Basket</NavLink> </Nav.Link>
-    <Nav.Link> <NavLink className="linkBar" to="/blog">Blog</NavLink></Nav.Link>
-    <Nav.Link><NavLink className="linkBar" to="/contact">Contact</NavLink></Nav.Link>
-    <Nav.Link> <NavLink className="linkBar" to="/create">Create</NavLink></Nav.Link>
-    <Nav.Link><NavLink className="linkBar" to="/Order">Order</NavLink> </Nav.Link>
-    </Nav>
-  </Navbar.Collapse>
-</Navbar>
-     </>
-   )
-}
-
-
-export default EastnasUser
+    </>
+    )
+  }
+  export default EastnasUser

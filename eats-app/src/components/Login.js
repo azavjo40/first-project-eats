@@ -1,9 +1,14 @@
-import {useState, useEffect} from 'react'
+
+import {useState, useEffect, useContext} from 'react'
 import {Form ,Button,Container } from 'react-bootstrap'
+import { AuthContext } from '../context/AuthContext'
 import { useHttp } from '../hooks/http.hook'
 import { useMesaage } from '../hooks/message.hook'
 
 function Login() {
+  // все логика логина тут 
+ const auth = useContext(AuthContext)
+
 const message = useMesaage()
 
 const [form, setForm] = useState({ email: '', password: ''})
@@ -27,7 +32,7 @@ const { request, loading, error, clearError} = useHttp()
 const loginHandler = async () =>{
   try{
   const data = await request('/api/auth/login','POST', {...form})
-    message(data.message)
+   auth.login(data.token, data.userId)
     setForm({ email: '', password: ''})
 
   }catch(e){}

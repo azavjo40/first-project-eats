@@ -6,20 +6,26 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import EastnasUser from './components/NavbarUser';
 import 'materialize-css'
 import MenuNav from './components/MenuNav';
+import { useAuth } from './hooks/auth.hook';
+import { AuthContext } from './context/AuthContext';
 
 function App() {
-  const isAuthUser = false
- const routers = useRouters(isAuthUser)
+  const {token, login, logout, userId} = useAuth()
+  const isAuthenticated = !!token
+ const routers = useRouters(isAuthenticated)
   return (
     <>
+    <AuthContext.Provider value={{
+      token,  login, logout, userId, isAuthenticated 
+    }}>
     <Router > 
-  { isAuthUser ? <EastnasUser /> : <MenuNav/> }
+  { isAuthenticated ? <EastnasUser /> : <MenuNav/> }
     <div> 
      {routers}
       
     </div>
     </Router>
- 
+ </AuthContext.Provider>
     </>
   )
 }

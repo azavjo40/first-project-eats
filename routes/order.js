@@ -11,8 +11,6 @@ passport.authenticate('jwt',{session: false}),
 upload.single('image'),
  async(req, res)=>{
  try{
-    console.log(req.body)
-
     const order = new Order({
       name: req.body.name,
       cost: req.body.cost,
