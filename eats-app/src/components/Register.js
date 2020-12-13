@@ -59,9 +59,9 @@ function Register() {
       </Col>
     </Row>
   
-    <Form.Group controlId="formBasicEmail">
+    <Form.Group>
      <Form.Label>Email</Form.Label>
-      <Form.Control type="email"
+      <Form.Control 
        placeholder="Enter email" 
      name="email"
      value={form.email}
@@ -71,10 +71,9 @@ function Register() {
       </Form.Text>
     </Form.Group>
   
-    <Form.Group controlId="formBasicPassword">
+    <Form.Group >
       <Form.Label>Password</Form.Label>
       <Form.Control 
-      type="password" 
       placeholder="Password" 
        name="password"
        value={form.password}
