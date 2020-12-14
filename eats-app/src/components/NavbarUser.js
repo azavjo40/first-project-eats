@@ -31,7 +31,6 @@ function EastnasUser() {
     <h3>Personal-Area</h3>
    <p><NavLink  to="/">Home</NavLink></p>
    <p><NavLink   to="/menu">Menu</NavLink></p>
-   <p><NavLink   to="/blog">Blog</NavLink></p>
    <p><NavLink className="linkBar" to="/create">Create</NavLink></p>
    <p><NavLink className="linkBar" to="/Order">Order</NavLink></p>
    <p onClick={logoutHandler } style={{color: 'white', cursor: 'pointer'}}>Go Out</p>

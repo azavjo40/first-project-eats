@@ -15,7 +15,6 @@ function MenuNav() {
 <p><NavLink  to="/">Home</NavLink></p>
 <p><NavLink   to="/menu">Menu</NavLink></p>
 <p><NavLink to="/contact">Contact</NavLink></p>
-<p><NavLink  to="/contact">Contact</NavLink></p>
 <p><NavLink  to="/auth">Check to login</NavLink></p>
 <h1 className="h1Close">x</h1>
  </div>

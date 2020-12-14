@@ -4,7 +4,6 @@ import Home from '../pages/Home'
 import Menu from '../pages/Menu'
 import Product from '../pages/Product'
 import Contact from '../pages/Contact'
-import Blog from '../pages/Blog'
 import Order from '../pages/Order'
 import Create from '../pages/Create' 
 import Auth from '../pages/Auth'
@@ -39,10 +38,6 @@ function useRouters(isAuthUser ){
               <Product />
           </Route>
 
-          <Route path="/blog" exact >
-              <Blog />
-          </Route>
-
           <Route path="/poduct/:id" exact >
                <Product />
            </Route>
@@ -68,11 +63,6 @@ function useRouters(isAuthUser ){
           <Route path="/contact" exact >
               <Contact />
           </Route>
-
-          <Route path="/blog" exact >
-              <Blog />
-          </Route>
-
 
            <Route path="/auth" exact >
               <Auth />

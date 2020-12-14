@@ -1,0 +1,36 @@
+
+.conCreate {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    margin-top: 5%;
+   
+    }
+ .conCreate input, textarea{ 
+     margin: 5px;
+    width: 40%;
+    border-radius: 15px;
+    box-shadow: none !important;
+    
+    }
+
+    .conCreate button{
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color:#2979ff ;
+    color: white;
+    width: 100px;
+    }
+    
+    .conCreate label{
+        color: black;
+    }
+
+    @media only screen and (max-width: 550px) {
+        .conCreate input, textarea{
+            width: 90%;
+        }
+           }
