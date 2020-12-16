@@ -1,57 +1,65 @@
 import { useState, useEffect,useContext} from 'react'
-import { useHttp } from '../hooks/http.hook'
 import '../styleComp/create.css'
 import { useMesaage } from '../hooks/message.hook'
 import { AuthContext } from '../context/AuthContext'
+//import {useHttpFile} from '../hooks/useHttpFile'
 
 function Create() {
  
 const auth = useContext(AuthContext)
-
   const message = useMesaage()
-
-  const {request, loading, error, clearError} = useHttp()
+ // const {requestFile, loading, error, clearError} = useHttpFile()
 
 const [form, setForm] = useState({
   name: '', cost: '', p: '' 
 })
- const {file, setFile} = useState({imageSrc: null})
+const [file, setFile] = useState()
+//const [filename, setFilename] = useState()
 
 
-  const fileChange = (e)=> {
-  setFile({ imageSrc: URL.createObjectURL(e.target.files[0])})
-  console.log(file)
-}
 
   //  следить за ошибка и отправляем пз
-  useEffect(()=>{
-    message(error)
-    clearError()
-    },[error,message, clearError])
+//  useEffect(()=>{
+ //   message(error)
+ //   clearError()
+  //  },[error,message, clearError])
 
 const changehandler = (event)=>{
   setForm({...form, [event.target.name]: event.target.value })
+ 
 } 
 
-const orderHandler = async ()=>{
-  try {
-        
-    const data = await  request('/api/order','POST',{...form},{
-      Authorization: auth.token
-    })
-    message(data.message)
-    //setForm({ name: '', surname: '', email: '', password: '', phone: ''})
-    
-    } catch (e) {}
+const fileChange = (e)=>{
+   const fileField= e.target.files[0]
+   setFile(fileField)
+
 }
 
+// отправка файл текст в сервер
+const sendFile = async ()=>{
+const formdata = new FormData();
+formdata.append("name",form.name);
+formdata.append("cost", form.cost);
+formdata.append("p", form.p);
+formdata.append("file", file);
+const requestOptions = {
+  method: 'POST',
+  headers: {"Authorization": auth.token},
+  body: formdata,
+  redirect: 'follow'
 
+};
+
+ await fetch("/api/order", requestOptions)
+.then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error))
+}
   return (
     <div className="conCreate">
 
 <button
-disabled={loading}
-onClick={orderHandler}
+onClick={sendFile}
 >Send</button>
 
 <textarea 
@@ -60,12 +68,13 @@ onClick={orderHandler}
    value={form.p}
    onChange={changehandler}
    >
-</textarea>
+</textarea >
 
   <label>Paragraph</label>
-<input type="file"
-   // accept="image/png, image/jpeg"
-    onChange={fileChange}
+    <input type="file"
+    accept="image/png, image/jpeg"
+    onChange={(e)=>{fileChange(e)}}
+  
      />
   <label >Image</label>
 

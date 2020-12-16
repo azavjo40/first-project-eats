@@ -1,17 +1,19 @@
 // my hooks http fetch запрос к сервер
+import { header } from 'express-validator'
 import {useState, useCallback} from 'react'
 
-export const useHttp = () => {
+export const useHttpFile = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
 
-  const request = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
+  const requestFile = useCallback(async (url, method = 'GET', body = null, headers = {}) => {
     setLoading(true)
     try {
       if (body) {
         body = JSON.stringify(body)
         headers['Content-Type'] = 'application/json' 
       }
+     
 
       const response = await fetch(url, {method, body, headers})
       const data = await response.json()
@@ -32,5 +34,5 @@ export const useHttp = () => {
 
   const clearError = useCallback(() => setError(null), [])
 
-  return { loading, request, error, clearError }
+  return { loading, requestFile, error, clearError }
 }

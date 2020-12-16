@@ -165,3 +165,56 @@ export default Menu
 
 <textarea  rows="4" cols="50">
 </textarea>
+
+
+const fileChange = (e)=> {
+  const files = e.target.files
+  var formData = new FormData()
+  formData.append('image', files[0])
+setFile(formData)
+console.log(formData)
+}
+
+
+'Content-Type': 'application/x-www-form-urlencoded'
+ if(body.file){
+        headers['Content-Type'] = 'application/x-www-form-urlencoded'
+      }
+
+
+
+const sendFile = async e =>{
+  try {
+
+    const data = await requestFile('/api/order','POST',{ ...form, file},
+    { 
+       Authorization: auth.token,
+       'Content-Type': 'application/x-www-form-urlencoded'
+      
+      }
+    )
+
+   console.log(data)
+  
+    } catch (e) {console.log(e)}
+
+}
+
+
+const result = fetch("api/order",{
+  method: 'POST',
+  headers: {
+  'Content-Type':  'multipart/form-data'
+ 
+},
+  body: data,
+})
+console.log(result)
+
+
+const data = new FormData()
+data.append("username", "file")
+data.append("file", file)
+//Axios.post("/", data)
+//.then(res=>{console.log(res)})
+//.catch(err=>{console.log(err)})
