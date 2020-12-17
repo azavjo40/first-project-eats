@@ -19,7 +19,10 @@
     margin: 10px;
 }
 
-
+.header button:focus {
+    outline: none;
+    border: none;
+}
 
 
 
@@ -53,6 +56,7 @@
     align-content: stretch;
     align-items: center;
     width: 30%;
+    
 }
 .product p button{
     border: none;
@@ -62,7 +66,10 @@
     margin: 10px;
     
 }
-
+.product p button:focus {
+    outline: none;
+    border: none;
+}
 
 
 @media only screen and (max-width: 425px) {

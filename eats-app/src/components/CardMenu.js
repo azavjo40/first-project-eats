@@ -1,42 +1,39 @@
-import { useState } from 'react'
+import { useState ,useEffect, useCallback} from 'react'
 import '../styleComp/cardMenu.css'
-import kebab from '../images/kebab.jpg'
-function CardMenu({addToCart}) {
-  const [products] = useState([
-    {
-      p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
-  name: 'AA Battery',
-  cost: '$2.99',
-  image: kebab
-  },{
-    p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
-      name: 'Blanket',
-      cost: '$19.99',
-      image: kebab
-    },  {
-      p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
-      name: 'AA Battery',
-      cost: '$2.99',
-      image: kebab
-        }
-  ])
 
- 
+function CardMenu({addToCart}) {
+const [products, setProducts] = useState([])
+const fetchProducts = useCallback( async () => {
+const requestOptions = {
+method: 'GET',
+redirect: 'follow'
+}
+try {
+const res = await fetch('/api/orderget',requestOptions)
+const data = await res.json()
+setProducts(data)
+} catch (e) {}
+},[])
+
+// вызваем функцию
+useEffect(()=>{
+fetchProducts()
+},[fetchProducts])
 
 return(
 <>
-<div className="products" >
-{products.map((product, i)=> (
-<>
-<div className="product" key={i} >
-  <img  src={product.image }  alt={product.name} className="imgProduct" />
-  <h5   >{product.name}</h5> 
-<p>{product.p}</p>
-<p >{product.cost}<button onClick={()=> addToCart(product)}  > Add</button> </p>
-</div>
-</>
-))}
-</div>
+  <div className="products">
+    {products.map((product)=> (
+    <>
+      <div className="product" key={product._id}>
+        <img src={product.imageSrc } alt={product.name}  className="imgProduct" />
+        <h5 >{product.name}</h5>
+        <p >{product.p}{product.length}</p>
+        <p >{product.cost}PL<button  onClick={()=> addToCart(product)} > Add</button> </p>
+      </div>
+    </>
+    ))}
+  </div>
 </>
 )
 }

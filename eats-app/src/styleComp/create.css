@@ -14,7 +14,7 @@
     width: 40%;
     border-radius: 15px;
     box-shadow: none !important;
-    
+    outline: none;
     }
 
     .conCreate button{
@@ -23,6 +23,13 @@
     background-color:#2979ff ;
     color: white;
     width: 100px;
+    outline: none;
+    border: none;
+    }
+
+    .conCreate button:focus {
+        outline: none;
+        border: none;
     }
     
     .conCreate label{

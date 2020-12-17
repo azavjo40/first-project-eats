@@ -218,3 +218,74 @@ data.append("file", file)
 //Axios.post("/", data)
 //.then(res=>{console.log(res)})
 //.catch(err=>{console.log(err)})
+
+
+ .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
+
+
+  // отправка файл текст в сервер
+  const sendFile = async () => {
+    const formdata = new FormData();
+    formdata.append("name", form.name);
+    formdata.append("cost", form.cost);
+    formdata.append("p", form.p);
+    formdata.append("file", file);
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        "Authorization": auth.token
+      },
+      body: formdata,
+      redirect: 'follow'
+
+    };
+
+    await fetch("/api/order", requestOptions)
+      .then(response => response.json())
+      .then(result => console.log(result))
+      .catch(error => console.log('error', error))
+  }
+
+
+
+   const orderHandler = async ()=>{
+      const formdata = new FormData();
+      formdata.append("name", form.name);
+      formdata.append("cost", form.cost);
+      formdata.append("p", form.p);
+      formdata.append("file", file);
+    try {
+    const data = await  request('/api/order','POST',{formdata},{
+  "Authorization": auth.token
+    })
+    message(data.message)
+    
+    
+    } catch (e) {}
+  }
+
+
+
+    const [products] = useState([
+    {
+      p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
+  name: 'AA Battery',
+  cost: '$2.99',
+  image: kebab
+  },{
+    p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
+      name: 'Blanket',
+      cost: '$19.99',
+      image: kebab
+    },  {
+      p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
+      name: 'AA Battery',
+      cost: '$2.99',
+      image: kebab
+        }
+  ])
+
+ 

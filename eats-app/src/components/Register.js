@@ -5,7 +5,6 @@ import { useMesaage } from '../hooks/message.hook'
 
 function Register() {
   const message = useMesaage()
- //const [mess, setMess] = useState(null)
   const { request, loading, error, clearError} = useHttp()
   
   const [form, setForm] = useState({
