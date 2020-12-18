@@ -1,82 +1,81 @@
 .menuNav{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-content: stretch;
-    align-items: center;
-    background-color: #343a40;
-   z-index: 1;
-   padding-top: 10px;
-    
-    }
+display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+justify-content: space-around;
+align-content: stretch;
+align-items: center;
+background-color: #343a40;
+z-index: 1;
+padding-top: 10px;
 
-    .menuNav a{
-         color: white;
-         text-decoration: none;
-         padding-top: 10px;
-    }
+}
 
-    .menuNav h3{
-        color: white;
-        cursor: pointer;
-    }
+.menuNav a{
+color: white;
+text-decoration: none;
+padding-top: 10px;
+}
+
+.menuNav h3{
+color: white;
+cursor: pointer;
+}
 .h1Close{
-  color:white;
-  cursor: pointer;
+color:white;
+cursor: pointer;
 }
 
 .h1Close:hover{
-  color: white;
+color: white;
 }
 @media only screen and (max-width: 550px) {
 .menuNav{
-  display: none;
-    }
-  
-  }
-  .openMenu{
+display: none;
+}
+
+}
+.openMenu{
 display: block;
 position: relative;
 z-index: 10;
 transition: 1s;
 
-  }
-  .openMenu img{ 
-      width: 50px;
-      cursor: pointer;
-  }
-  
-  @media only screen and (min-width: 550px) {
-    .openMenu{
-       display: none;
-         }
-         .h1Close{
-           display: none;
-         }
-       }
+}
+.openMenu img{
+width: 50px;
+cursor: pointer;
+}
 
+@media only screen and (min-width: 550px) {
+.openMenu{
+display: none;
+}
+.h1Close{
+display: none;
+}
+}
 
-  .openM{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: space-around;
-    align-content: stretch;
-    align-items: center;
-    background-color: #343a40;
-  
-    width: 100%;
-  
-    }
+.openM{
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: space-around;
+align-content: stretch;
+align-items: center;
+background-color: #343a40;
 
-    .openM a{
-     text-decoration: none;
-        color: white;
-        
-   }
-   .openM h3{
-    color: white;
+width: 100%;
+
+}
+
+.openM a{
+text-decoration: none;
+color: white;
+
+}
+.openM h3{
+color: white;
 }
 
 .closeMenu {

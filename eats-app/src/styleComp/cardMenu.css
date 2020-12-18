@@ -1,84 +1,84 @@
-
 .header h1 {
-    color:#2979ff ;
+color:#2979ff ;
 }
 
-  .header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 40px;
-    width: 100%;
-    
+.header{
+display: flex;
+justify-content: space-around;
+align-items: center;
+height: 40px;
+width: 100%;
+
 }
 .header button{
-    border: none;
-    background-color: black;
-    color: white;
-    border-radius: 50px;
-    margin: 10px;
+border: none;
+background-color: black;
+color: white;
+border-radius: 50px;
+margin: 10px;
 }
 
 .header button:focus {
-    outline: none;
-    border: none;
+outline: none;
+border: none;
 }
-
-
-
-
 
 .cont{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-content: stretch;
-    align-items: center;
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: flex-start;
+align-content: stretch;
+align-items: center;
 }
 .products{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: stretch;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+align-content: stretch;
 }
 
 .mgProduct{
-    width: 100%;
+width: 100%;
 }
 
 .product{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: stretch;
-    align-items: center;
-    width: 30%;
-    
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: flex-start;
+align-content: stretch;
+align-items: center;
+width: 30%;
+
 }
 .product p button{
-    border: none;
-    background-color: black;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color:#2979ff ;
     color: white;
-    border-radius: 50px;
-    margin: 10px;
-    
-}
-.product p button:focus {
+    width: 80px;
     outline: none;
     border: none;
+
+}
+.product p button:hover{
+    background-color:#2979ff77 ;
 }
 
+.product p button:focus {
+outline: none;
+border: none;
+}
 
 @media only screen and (max-width: 425px) {
-    .product{
-     width: 100%;
- 
-    }
-  }
-  .product img{
-    width: 100%;
-  }
-   
+.product{
+width: 100%;
+
+}
+}
+.product img{
+width: 100%;
+height: 200px;
+}

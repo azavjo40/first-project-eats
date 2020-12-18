@@ -1,0 +1,107 @@
+.cont{
+    display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: flex-start;
+align-content: stretch;
+align-items: center;
+
+}
+.baskets{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: stretch;
+  width: 100%;
+}
+@media only screen and (max-width: 425px) {
+    .baskets{
+        align-content: center;
+    }
+     .basket{
+         width: 100%;
+     }
+    }
+
+.basket{
+    display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+justify-content: flex-start;
+align-content: stretch;
+align-items: center;
+width: 400px;
+background-color: burlywood;
+margin: 20px;
+}
+.remove{
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color:#e91e63 ;
+    color: white;
+    width: 80px;
+    outline: none;
+    border: none;
+}
+.basket button:focus {
+    outline: none;
+    border: none;
+    }
+.remove:hover{
+    background-color: #e91e6388 ;
+}
+
+.buy{
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color:#2979ff ;
+    color: white;
+    width: 200px;
+    outline: none;
+    border: none;
+}
+.buy:hover{
+    background-color:#2979ff77 ;
+}
+.buy:focus {
+    outline: none;
+    border: none;
+    }
+    .selection{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: stretch;
+       width: 100%;
+    }
+    
+    .selButton{ 
+flex-wrap: wrap;
+        display: flex;
+        justify-content: space-around;
+        align-content: stretch;
+       width: 100%;
+    }
+    .selButton button{
+        margin-top: 5px;
+        border-radius: 1000px;
+        background-color:#18ffff;
+        color: white;
+        width: 35px;
+        
+    
+        outline: none;
+        border: none;
+      
+    }
+    .selButton button:hover{
+        background-color:#00e5ff ;
+    }
+    .complment-product{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: stretch;
+       width: 100%;
+    }

@@ -1,43 +1,48 @@
-
 .conCreate {
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: stretch;
-    align-items: center;
-    margin-top: 5%;
-   
-    }
- .conCreate input, textarea{ 
-     margin: 5px;
-    width: 40%;
-    border-radius: 15px;
-    box-shadow: none !important;
-    outline: none;
-    }
+display: flex;
+flex-direction: column-reverse;
+flex-wrap: wrap;
+justify-content: center;
+align-content: stretch;
+align-items: center;
+margin-top: 5%;
 
-    .conCreate button{
-    margin-top: 5px;
-    border-radius: 10px;
-    background-color:#2979ff ;
-    color: white;
-    width: 100px;
-    outline: none;
-    border: none;
-    }
+}
+.conCreate input, textarea{
+padding: 10px;
+margin: 5px;
+width: 40%;
+border-radius: 15px;
+box-shadow: none !important;
+outline: none;
 
-    .conCreate button:focus {
-        outline: none;
-        border: none;
-    }
-    
-    .conCreate label{
-        color: black;
-    }
+}
+.conCreate input:hover ,textarea:hover{
+border-color: chartreuse;
+}
+.conCreate button{
+margin-top: 5px;
+border-radius: 10px;
+background-color:#2979ff ;
+color: white;
+width: 100px;
+outline: none;
+border: none;
+}
+.conCreate button:hover{
+background-color:#2979ff77 ;
+}
+.conCreate button:focus {
+outline: none;
+border: none;
+}
 
-    @media only screen and (max-width: 550px) {
-        .conCreate input, textarea{
-            width: 90%;
-        }
-           }
+.conCreate label{
+color: black;
+}
+
+@media only screen and (max-width: 550px) {
+.conCreate input, textarea{
+width: 90%;
+}
+}
