@@ -32,7 +32,7 @@ justify-content: flex-start;
 align-content: stretch;
 align-items: center;
 width: 400px;
-background-color: burlywood;
+background-color: rgba(236, 232, 232, 0.884);
 margin: 20px;
 }
 .remove{

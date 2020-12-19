@@ -1,6 +1,5 @@
 import { useState ,useEffect, useCallback} from 'react'
 import '../styleComp/cardMenu.css'
-
 function CardMenu({addToCart}) {
 const [products, setProducts] = useState([])
 const fetchProducts = useCallback( async () => {
@@ -11,7 +10,7 @@ redirect: 'follow'
 try {
 const res = await fetch('/api/orderget',requestOptions)
 const data = await res.json()
-setProducts(data)
+  setProducts(data)
 } catch (e) {}
 },[])
 
