@@ -16,7 +16,8 @@ required: true
 },
 imageSrc: {
 type: String,
-default: ''
+default: '',
+required: true
 },
 date: {
 type: Date,

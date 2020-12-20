@@ -2,6 +2,8 @@ import { useState } from 'react'
 import '../styleComp/cardMenu.css'
 import CartMenu from '../components/CardMenu'
 import CartBasket from '../components/CartBasket'
+import basket from '../images/basket.png'
+import back from '../images/back.png'
 function Menu() {
   // тут забераем карть на которий нажали
   const [cart, setCart] = useState([])
@@ -21,8 +23,9 @@ function Menu() {
  return(
  <div className="cont">
    <header className="header">
-     <button onClick={()=>{setPage(true)} } >Back Menu</button>
-     <button onClick={()=>{setPage(false)} } >basket {cart.length}</button>
+    <h3>{cart.length}</h3> 
+    <img className={page?  'basket':''} src={basket} alt={basket.name}  onClick={()=>{setPage(!page)} } />
+    <img  className={page? 'back':''} src={back} alt={back.name}  onClick={()=>{setPage(!page)} } />
    </header>
    {page ?
    <CartMenu addToCart={addToCart} />:

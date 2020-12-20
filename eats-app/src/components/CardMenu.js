@@ -10,30 +10,27 @@ redirect: 'follow'
 try {
 const res = await fetch('/api/orderget',requestOptions)
 const data = await res.json()
-  setProducts(data)
+setProducts(data)
 } catch (e) {}
 },[])
-
 // вызваем функцию
 useEffect(()=>{
 fetchProducts()
 },[fetchProducts])
 
 return(
-<>
   <div className="products">
-    {products.map((product)=> (
-    <>
-      <div className="product" key={product._id}>
-        <img src={product.imageSrc } alt={product.name}  className="imgProduct" />
-        <h5 >{product.name}</h5>
-        <p >{product.p}{product.length}</p>
-        <p >{product.cost}-PL  <button  onClick={()=> addToCart(product)} > Add</button> </p>
+    {products.map((product, i)=> (
+     <div className="product" key={ i}>
+       <div key={product._id}>
+        <img src={product.imageSrc } alt={product.name} className="imgProduct" />
+        <h5>{product.name}</h5>
+        <p>{product.p}{product.length}</p>
+        <p>{product.cost}-PL <button onClick={()=> addToCart(product)} > Add</button> </p>
       </div>
-    </>
+      </div>
     ))}
   </div>
-</>
 )
 }
 

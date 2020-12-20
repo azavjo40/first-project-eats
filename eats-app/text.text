@@ -274,18 +274,57 @@ data.append("file", file)
       p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
   name: 'AA Battery',
   cost: '$2.99',
-  image: kebab
+  imageSrc: kebab
   },{
     p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
       name: 'Blanket',
       cost: '$19.99',
-      image: kebab
+      imageSrc: kebab
     },  {
       p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
       name: 'AA Battery',
       cost: '$2.99',
-      image: kebab
+      imageSrc: kebab
         }
   ])
 
+
+
+  4
+
+Вы можете передать «true» или «» проверенному свойству флажка ввода. Пустые кавычки ("") будут восприниматься как ложные, и элемент не будет отмечен.
+
+let checked = variable === value ? "true" : "";
+<input
+     className="form-check-input"
+    type="checkbox"
+    value={variable}
+    id={variable}
+    name={variable}
+    checked={checked}
+/>
+<label className="form-check-label">{variable}</label>
+
+
+
+
+
+function Checkbox() {
+  const [checked, setChecked] = React.useState(true);
+
+  return (
+    <label>
+      <input type="checkbox"
+        checked={checked}
+        onChange={() => setChecked(!checked)}
+      />
+      Check Me!
+    </label>
+  );
+}
+
+ReactDOM.render(
+  <Checkbox />,
+  document.getElementById('checkbox'),
+);
  

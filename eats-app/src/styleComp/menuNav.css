@@ -48,13 +48,13 @@ cursor: pointer;
 }
 
 @media only screen and (min-width: 550px) {
-.openMenu{
-display: none;
-}
-.h1Close{
-display: none;
-}
-}
+    .openMenu{
+    display: none;
+    }
+    .h1Close{
+    display: none;
+    }
+    }
 
 .openM{
 display: flex;

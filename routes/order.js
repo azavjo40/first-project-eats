@@ -1,5 +1,5 @@
-const {
-Router} = require('express')
+const {Router} = require('express')
+const {check, validationResult} = require('express-validator')
 const router = Router()
 const upload = require('../midlleware/upload')
 const errorHandlier = require('../utils/errorHandlier')
@@ -12,7 +12,6 @@ session: false
 }),
 upload.single('file'),
 async (req, res) => {
-
 try {
 console.log(req.body)
 const order = new Order({
@@ -26,7 +25,7 @@ imageSrc: req.file ? req.file.path : ''
 
 })
 await order.save()
-res.status(201).json(order)
+res.status(201).json({message: 'Спасибо вы создали Меню'})
 console.log(order)
 } catch (e) {
 errorHandlier(res, e)

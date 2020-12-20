@@ -2,25 +2,21 @@ import { useState } from 'react'
 import '../styleComp/cartBasket.css'
 function CartBasket({cart, removeFromCart}) {
 const [collection, setCollection] = useState([])
-//const [checked, setChecked] = useState(true)
 const changeHandler = (e)=>{
  const checked =  e.target.checked
  if(checked){
-     setCollection({...collection, [e.target.name]: e.target.value })
+     setCollection({...collection,[e.target.name]: e.target.value })
  }
 }
 const sendHandler = ()=>{
   console.log({...collection})
 }
-
-
   return(
   <div className="cont">
-    <h1>Youer {cart.cost}basket</h1>
     <div className="baskets">
       {cart.map((product, i)=> (
-      <div className="basket" key={product._id}>
-        <h5>{product.name}</h5>
+      <div className="basket" key={i}>
+           <h5 >{product.name}</h5> 
         <div className="selection">
           <label> <input type="radio" name={product.name+ i} value="lagodne" onChange={(e)=>{changeHandler(e)}}
 
@@ -49,11 +45,7 @@ const sendHandler = ()=>{
 
             />Pepsi</label>
         </div>
-        <div className="selButton">
-          <button>-</button>
-          <p>{product.cost} PL</p>
-          <button>+</button>
-        </div>
+         <div> <p>{product.cost} PL</p></div>
         <button className="remove" onClick={()=>removeFromCart(product)} >Remove</button>
       </div>
       ))}
