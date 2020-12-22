@@ -6,6 +6,7 @@ const errorHandlier = require('../utils/errorHandlier')
 const Create = require('../models/create')
 const passport = require('passport')
 const create = require('../models/create')
+const fs = require('fs')
 
 router.post('/create',
 passport.authenticate('jwt', {
@@ -38,5 +39,16 @@ res.json(create)
 }catch(e){
 errorHandlier(res, e)
 }
+})
+router.delete('/delete/:id',
+async (req, res)=>{
+try{
+     const path = 'uploads/'
+    await Create.find({
+        _id: req.params.id,
+        })
+        fs.unlinkSync(path)
+        res.status(200).json({message: 'Menuудалена'})
+}catch(e){errorHandlier(res, e)}
 })
 module.exports = router
