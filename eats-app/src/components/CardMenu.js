@@ -20,7 +20,7 @@ function CardMenu({addToCart}) {
       imageSrc: kebab
         }
   ])
-const [products, setProducts] = useState([])
+/*const [products, setProducts] = useState([])
 const fetchProducts = useCallback( async () => {
 const requestOptions = {
 method: 'GET',
@@ -35,7 +35,7 @@ setProducts(data)
 // вызваем функцию
 useEffect(()=>{
 fetchProducts()
-},[fetchProducts])
+},[fetchProducts])*/
 
 return(
   <div className="products">
