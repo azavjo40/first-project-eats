@@ -3,10 +3,11 @@ const {check, validationResult} = require('express-validator')
 const router = Router()
 const upload = require('../midlleware/upload')
 const errorHandlier = require('../utils/errorHandlier')
-const Order = require('../models/Order')
+const Create = require('../models/create')
 const passport = require('passport')
+const create = require('../models/create')
 
-router.post('/order',
+router.post('/create',
 passport.authenticate('jwt', {
 session: false
 }),
@@ -14,31 +15,26 @@ upload.single('file'),
 async (req, res) => {
 try {
 console.log(req.body)
-const order = new Order({
+const create = new Create({
 name: req.body.name,
 cost: req.body.cost,
 p: req.body.p,
 user: req.user.id,
-
 //провераем если есть файл иначе добавлаем пустой строка
 imageSrc: req.file ? req.file.path : ''
-
 })
-await order.save()
+await create.save()
 res.status(201).json({message: 'Спасибо вы создали Меню'})
 console.log(order)
 } catch (e) {
 errorHandlier(res, e)
-
 }
-
 })
-
-router.get('/orderget',
+router.get('/allcreate',
 async (req, res)=>{
 try{
-const order = await Order.find()
-res.json(order)
+const create = await Create.find()
+res.json(create)
 }catch(e){
 errorHandlier(res, e)
 }

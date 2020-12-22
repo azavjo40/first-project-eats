@@ -10,7 +10,7 @@ const app = express()
 app.use(express.json({ extended: true }))
 app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api/auth', require('./routes/auth.contact'))
-app.use('/api', require('./routes/order'))
+app.use('/api', require('./routes/create'))
 // что бы файл статичиска нашли получать доступ на примую с клента
 app.use('/uploads',express.static('uploads'))
 //cors

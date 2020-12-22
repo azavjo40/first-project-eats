@@ -5,6 +5,7 @@ import CartBasket from '../components/CartBasket'
 import basket from '../images/basket.png'
 import back from '../images/back.png'
 function Menu() {
+
   // тут забераем карть на которий нажали
   const [cart, setCart] = useState([])
   // перекулчения с карта на продукта
@@ -19,7 +20,6 @@ function Menu() {
  const removeFromCart = (productToRemove)=>{
  setCart(cart.filter(product => product !== productToRemove ))
  }
-
  return(
  <div className="cont">
    <header className="header">

@@ -1,11 +1,13 @@
 #toast-container{
+display: flex;
+flex-direction: column;
 width: 100%;
-height: 30px;
-top: 100px;
-right: 10px;
+height: 80px;
+top: 20px;
+left: 60%;
 position: absolute;
 padding-left: 20px;
-
+position: fixed;
 }
 
 #toast-container .toast{

@@ -29,7 +29,7 @@ headers: {
 body: formdata,
 redirect: 'follow'
 }
-const response = await fetch("/api/order", requestOptions)
+const response = await fetch("/api/create", requestOptions)
 const data = await response.json()
   message(data.message)
 setForm({name: '', cost: '', p: '' })
