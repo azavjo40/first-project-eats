@@ -1,26 +1,7 @@
 import { useState ,useEffect, useCallback} from 'react'
-import kebab from '../images/kebab.jpg'
 import '../styleComp/cardMenu.css'
 function CardMenu({addToCart}) {
-  const [prod] = useState([
-    {
-      p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
-  name: 'AA Battery',
-  cost: '$2.99',
-  imageSrc: kebab
-  },{
-    p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
-      name: 'Blanket',
-      cost: '$19.99',
-      imageSrc: kebab
-    },  {
-      p: 'Stosowanie paragrafów i artykułów jest czasami wykorzystywane ',
-      name: 'AA Battery',
-      cost: '$2.99',
-      imageSrc: kebab
-        }
-  ])
-/*const [products, setProducts] = useState([])
+const [products, setProducts] = useState([])
 const fetchProducts = useCallback( async () => {
 const requestOptions = {
 method: 'GET',
@@ -35,11 +16,11 @@ setProducts(data)
 // вызваем функцию
 useEffect(()=>{
 fetchProducts()
-},[fetchProducts])*/
+},[fetchProducts])
 
 return(
   <div className="products">
-    {prod.map((product, i)=> (
+    {products.map((product, i)=> (
      <div className="product" key={ i}>
        <div key={product._id}>
         <img src={product.imageSrc } alt={product.name} className="imgProduct" />
