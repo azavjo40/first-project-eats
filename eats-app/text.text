@@ -328,3 +328,21 @@ ReactDOM.render(
   document.getElementById('checkbox'),
 );
  
+const contactsHandler = useCallback( async()=>{
+  const requestOptions = {
+  method: 'GET',
+  headers: {
+  "Authorization": auth.token
+  },
+  redirect: 'follow'
+  }
+  try{
+  const res = await fetch('/api/auth/mycontacts',requestOptions )
+  const date = await res.json()
+  setContacts(date)
+  }catch(e){}
+  },[auth.token])
+  
+  useEffect(()=>{
+  contactsHandler()
+  },[contactsHandler])

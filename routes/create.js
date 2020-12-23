@@ -43,12 +43,11 @@ errorHandlier(res, e)
 router.delete('/delete/:id',
 async (req, res)=>{
 try{
-     const path = 'uploads/'
-    await Create.find({
-        _id: req.params.id,
-        })
-        fs.unlinkSync(path)
-        res.status(200).json({message: 'Menuудалена'})
+await Create.find({
+_id: req.params.id,
+})
+//fs.unlinkSync(path)
+res.status(200).json({message: 'Menu удалена'})
 }catch(e){errorHandlier(res, e)}
 })
 module.exports = router
