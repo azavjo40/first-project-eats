@@ -19,7 +19,6 @@ const contactHandler = async () =>{
 try{
 const data = await request('/api/auth/contact','POST', {...form})
 message(data.message)
-console.log(data)
 setForm({name: '', phone: '', message: ''})
 }catch(e){}
 }

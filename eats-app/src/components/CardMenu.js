@@ -19,7 +19,7 @@ fetchProducts()
 },[fetchProducts])
 
 return(
-  <div className="products">
+  <div className="cont">
     {products.map((product, i)=> (
      <div className="product" key={ i}>
        <div key={product._id}>

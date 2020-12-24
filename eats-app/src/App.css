@@ -1,12 +1,8 @@
 #toast-container{
-width: 100%;
-height: 80px;
-top: 20px;
-left: 60%;
-padding-left: 20px;
+top: 30px;
+left: 10px;
 position: fixed;
 }
-
 #toast-container .toast{
 width: 100%;
 font-size: 20px;

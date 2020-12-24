@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import '../styleComp/cardMenu.css'
 import CartMenu from '../components/CardMenu'
 import CartBasket from '../components/CartBasket'
+//import '../styleComp/menu.css'
 import basket from '../images/basket.png'
 import back from '../images/back.png'
 function Menu() {
@@ -15,21 +15,13 @@ function Menu() {
   setCart([...cart, {...product}])
   //console.log(product)
   }
-
  // фн удаления с карта
  const removeFromCart = (productToRemove)=>{
  setCart(cart.filter(product => product !== productToRemove ))
  }
  return(
- <div className="cont">
-   <header className="header">
-    <h3>{cart.length}</h3> 
-    <img className={page?  'basket':''} src={basket} alt={basket.name}  onClick={()=>{setPage(!page)} } />
-    <img  className={page? 'back':''} src={back} alt={back.name}  onClick={()=>{setPage(!page)} } />
-   </header>
-   {page ?
-   <CartMenu addToCart={addToCart} />:
-   <CartBasket removeFromCart={removeFromCart} cart={cart} />}
+ <div className="contMenu">
+ <CartMenu addToCart={addToCart} />
  </div>
  )
 

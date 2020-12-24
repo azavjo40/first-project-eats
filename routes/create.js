@@ -14,23 +14,20 @@ session: false
 }),
 upload.single('file'),
 async (req, res) => {
-try {
-console.log(req.body)
-const create = new Create({
-name: req.body.name,
-cost: req.body.cost,
-p: req.body.p,
-user: req.user.id,
-//провераем если есть файл иначе добавлаем пустой строка
-imageSrc: req.file ? req.file.path : ''
+try{
+    const create = new Create({
+        name: req.body.name,
+        cost: req.body.cost,
+        p: req.body.p,
+        user: req.user.id,
+        //провераем если есть файл иначе добавлаем пустой строка
+        imageSrc: req.file ? req.file.path : ''
+        })
+        await create.save()
+        res.status(201).json({message: 'Спасибо вы создали Меню'})
+}catch(e){errorHandlier(res,e)}
 })
-await create.save()
-res.status(201).json({message: 'Спасибо вы создали Меню'})
-console.log(order)
-} catch (e) {
-errorHandlier(res, e)
-}
-})
+
 router.get('/allcreate',
 async (req, res)=>{
 try{
@@ -40,11 +37,13 @@ res.json(create)
 errorHandlier(res, e)
 }
 })
-router.delete('/delete/:id',
+
+router.post('/delete/menu',
 async (req, res)=>{
+const {imageSrc, cost, p, id} = req.body
 try{
 await Create.find({
-_id: req.params.id,
+_id: req.body.id
 })
 //fs.unlinkSync(path)
 res.status(200).json({message: 'Menu удалена'})

@@ -346,3 +346,41 @@ const contactsHandler = useCallback( async()=>{
   useEffect(()=>{
   contactsHandler()
   },[contactsHandler])
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZmQzM2NmNTA3MmNmMDE1Yjg2MjRjN2QiLCJpYXQiOjE2MDg3NzYwMTR9.dYQBdBfq_8EaWs17PyOgPkAIQ_1FzKfPjy87vpr8udU");
+  
+  var requestOptions = {
+    method: 'DELETE',
+    headers: myHeaders,
+    redirect: 'follow'
+  };
+  
+  fetch("http://localhost:5000/api/auth/contact/5fe3da2b83533403cc3de892", requestOptions)
+    .then(response => response.text())
+    .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+    try {
+      const create = new Create({
+      name: req.body.name,
+      cost: req.body.cost,
+      p: req.body.p,
+      user: req.user.id,
+      //провераем если есть файл иначе добавлаем пустой строка
+      imageSrc: req.file ? req.file.path : ''
+      })
+      await create.save()
+      res.status(201).json({message: 'Спасибо вы создали Меню'})
+  } catch (e) {
+  errorHandlier(res, e)
+  }
+
+  <header className="header">
+  <h3>{cart.length}</h3> 
+ <img className={page?  'basket':''} src={basket} alt={basket.name}  onClick={()=>{setPage(!page)} } />
+  <img  className={page? 'back':''} src={back} alt={back.name}  onClick={()=>{setPage(!page)} } />
+ </header>
+
+ {page ?
+  <CartMenu addToCart={addToCart} />:
+  <CartBasket removeFromCart={removeFromCart} cart={cart} />}
