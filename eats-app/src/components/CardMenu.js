@@ -19,7 +19,7 @@ fetchProducts()
 },[fetchProducts])
 
 return(
-  <div className="products">
+  <>
     {products.map((product, i)=> (
      <div className="product" key={ i}>
        <div key={product._id}>
@@ -30,7 +30,7 @@ return(
       </div>
       </div>
     ))}
-  </div>
+  </>
 )
 }
 

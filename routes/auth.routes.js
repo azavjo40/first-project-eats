@@ -6,6 +6,7 @@ const {check, validationResult} = require('express-validator')
 const User = require('../models/User')
 const router = Router()
 // /api/auth/register
+
 router.post(
 '/register',
 [
@@ -38,6 +39,7 @@ res.status(201).json({ message: 'Пользователь создан' ,user})
 res.status(500).json({ message: 'Что-то пошло не так, попробуйте снова' })
 }
 })
+
 // /api/auth/login
 router.post(
 '/login',

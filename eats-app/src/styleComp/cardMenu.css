@@ -1,101 +1,38 @@
-.header{
-display: flex;
-align-items: center;
-height: 40px;
-width: 100%;
-}
-.header img{
-width: 5%;
-position: fixed;
-right: 3%;
-top: 60px;
-background-color: #2979ff;
-cursor: pointer;
-transition: 0.7s;
-border-radius: 30px;
-z-index: 10;
-}
-.header img:hover {
-border-radius: 30px;
-background-color: #2979ff88;
-border-radius: 20px;
-border: solid rgb(233, 210, 3);
-}
-.basket{
-display: none;
-}
-.back{
-display: none;
-}
-.header h3{
-position: fixed;
-right: 20%;
-color: #e91e63 ;
-font-size: 40px;
-cursor: default;
-font-weight: 900;
-font-family: 'Courier New', Courier, monospace;
-}
-.cont{
+.product{
+width: 30%;
 display: flex;
 flex-direction: column;
-flex-wrap: nowrap;
-justify-content: flex-start;
-align-content: stretch;
-align-items: center;
-}
-.products{
-display: flex;
-flex-direction: row;
 flex-wrap: wrap;
-justify-content: space-around;
-align-content: stretch;
-width: 100%;
-}
-
-.mgProduct{
-width: 100%;
-}
-.product{
-display: -ms-flexbox;
-display: -webkit-flex;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-around;
-align-content: center;
-align-items: stretch;
-width: 30%;
-text-align: center;
-}
-.product p button{
-margin-top: 5px;
+border: solid 1px black;
 border-radius: 10px;
-background-color:#2979ff ;
+background-color:#212121;
 color: white;
-width: 80px;
-outline: none;
-border: none;
-}
-.product p button:hover{
-background-color:#2979ff77 ;
-}
-.product p button:focus {
-outline: none;
-border: none;
-}
-@media only screen and (max-width: 425px) {
-.product{
-width: 90%;
-background-color: rgba(236, 232, 232, 0.884);
-}
-.header img{
-    width: 15%;
-    z-index: 10;
-    right: 2%;
-    }
+text-align: center;
+margin-top: 20px;
+align-items: center;
+justify-content: space-between;
+padding: 10px;
 }
 .product img{
 width: 100%;
 height: 200px;
+}
+.product button{
+cursor: pointer;
+background-color: #ffeb3b;
+color: black;
+margin-bottom: 10px;
+border-radius: 5px;
+}
+.product button:focus{
+outline: none;
+color: #e91e63;
+}
+.product button:hover{
+background-color: #ffff8d;
+}
+@media(max-width: 600px){
+.product{
+width: 90%;
+}
 }

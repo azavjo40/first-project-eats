@@ -1,11 +1,8 @@
 import { useState } from 'react'
-import '../styleComp/cardMenu.css'
 import CartMenu from '../components/CardMenu'
 import CartBasket from '../components/CartBasket'
-import basket from '../images/basket.png'
-import back from '../images/back.png'
+import '../styleComp/menu.css'
 function Menu() {
-
   // тут забераем карть на которий нажали
   const [cart, setCart] = useState([])
   // перекулчения с карта на продукта
@@ -13,26 +10,32 @@ function Menu() {
   // фн для збор карт нужна продукт указать как обект а не как масив
   const addToCart = (product)=>{
   setCart([...cart, {...product}])
-  //console.log(product)
+ // console.log(cart)
   }
-
  // фн удаления с карта
  const removeFromCart = (productToRemove)=>{
  setCart(cart.filter(product => product !== productToRemove ))
  }
  return(
- <div className="cont">
+   <>
    <header className="header">
-    <h3>{cart.length}</h3> 
-    <img className={page?  'basket':''} src={basket} alt={basket.name}  onClick={()=>{setPage(!page)} } />
-    <img  className={page? 'back':''} src={back} alt={back.name}  onClick={()=>{setPage(!page)} } />
+     <button
+className={page? '' :'basket' }
+     onClick={()=>{setPage(!page)} }
+     >{cart.length} - basket</button>
+     <button
+className={page? 'back' :'' }
+     onClick={()=>{setPage(!page)} }
+     >back</button>
    </header>
-   {page ?
-   <CartMenu addToCart={addToCart} />:
-   <CartBasket removeFromCart={removeFromCart} cart={cart} />}
+    
+ <div className="contMenu">
+   {page? <CartMenu addToCart={addToCart} /> :
+   <CartBasket removeFromCart={removeFromCart} cart={cart} />
+   }
  </div>
+ </>
  )
-
  }
 
 export default Menu

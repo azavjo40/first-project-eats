@@ -32,7 +32,7 @@ redirect: 'follow'
 const response = await fetch("/api/create", requestOptions)
 const data = await response.json()
   message(data.message)
-setForm({name: '', cost: '', p: '' })
+setForm({name: '', cost: '',imageSrc: '', p: '' })
 setFile('')
 }catch(e){
 message(e.message)

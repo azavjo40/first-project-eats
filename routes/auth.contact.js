@@ -2,6 +2,7 @@ const {Router} = require('express')
 const {check, validationResult} = require('express-validator')
 const Contact = require('../models/Contact')
 const router = Router()
+const passport = require('passport')
 const errorHandlier = require('../utils/errorHandlier')
 // /api/auth/register
 router.post(
@@ -29,7 +30,10 @@ res.status(200).json({message: 'Спасибо ближайшее ответим
 errorHandlier(res, e)
 }
 })
-router.get('/contact',
+router.get('/mycontacts',
+passport.authenticate('jwt', {
+session: false
+}),
 async (req, res)=>{
 try{
 const contact = await Contact.find()
@@ -37,8 +41,13 @@ res.status(200).json(contact)
 }catch(e){errorHandlier(res, e)}
 }
 )
+
 router.delete('/contact/:id',
+passport.authenticate('jwt', {
+    session: false
+    }),
 async(req, res)=>{
+    console.log(req.params.id)
 try{
 await Contact.remove({
 _id: req.params.id
@@ -47,5 +56,4 @@ res.status(200).json({message: 'Contact удалена'})
 }catch(e){errorHandlier(res, e)}
 }
 )
-
 module.exports = router
