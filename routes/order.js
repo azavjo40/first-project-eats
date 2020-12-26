@@ -15,7 +15,7 @@ const order = new Order({
     name, phone, address, message
 })
 await order.save()
-res.status(201).json({message: 'спасибо ближайшей время ответим вам'})
+res.status(201).json({message: 'спасибо ближайшей время ответим вам доставим заказь'})
 }catch(e){errorHandlier(res, e)}
 }
 )

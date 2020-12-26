@@ -59,7 +59,7 @@ right: 30px;
 outline: none;
 }
 .buyButton:hover{
-background-color: #80cbc4;
-border: solid .5px #d4e157;
-color: black;
-}
+    background-color: #80cbc4;
+    border: solid .5px #d4e157;
+    color: black;
+    }
