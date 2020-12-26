@@ -29,6 +29,9 @@ return(
       <NavLink to="/menu">Menu</NavLink>
     </p>
     <p>
+      <NavLink to="/mymenu">MyMenu</NavLink>
+    </p>
+    <p>
       <NavLink className="linkBar" to="/create">Create</NavLink>
     </p>
     <p>

@@ -44,10 +44,9 @@ res.status(200).json(contact)
 
 router.delete('/contact/:id',
 passport.authenticate('jwt', {
-    session: false
-    }),
+session: false
+}),
 async(req, res)=>{
-    console.log(req.params.id)
 try{
 await Contact.remove({
 _id: req.params.id

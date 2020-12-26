@@ -6,13 +6,13 @@ router.post('/order',
 async (req, res)=>{
 try{
 const {
-kebab,sos,cola,fanta, sprite,lipton,
-woda,ayran, mango, lemoniada
+    sos0,sos1,sos2,cola3,sos4,sos5,sos6,cola7,cola8,cola9,cola10,cost,
+    name, phone, address, message
 } = req.body
 console.log(req.body)
 const order = new Order({
-kebab,sos,cola,fanta, sprite,lipton,
-woda,ayran, mango, lemoniada
+    sos0,sos1,sos2,cola3,sos4,sos5,sos6,cola7,cola8,cola9,cola10,cost,
+    name, phone, address, message
 })
 await order.save()
 res.status(201).json({message: 'спасибо ближайшей время ответим вам'})

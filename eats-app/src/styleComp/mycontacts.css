@@ -4,6 +4,8 @@
     flex-wrap: wrap;
     justify-content: space-around;
     flex-direction: row;
+    align-items:stretch;
+    margin-bottom: 30px;
     }
     .cart{
     width: 45%;
@@ -44,6 +46,7 @@
     @media(max-width: 660px){
     .cont{
     flex-direction: column;
+    align-items: center;
     }
     .cart{
     width: 90%;

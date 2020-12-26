@@ -2,6 +2,7 @@ import React from 'react'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import Home from '../pages/Home'
 import Menu from '../pages/Menu'
+import MyMenu from '../pages/MyMenu'
 import Product from '../pages/Product'
 import Contact from '../pages/Contact'
 import Order from '../pages/Order'
@@ -25,6 +26,9 @@ return (
     </Route>
     <Route path="/menu" exact>
         <Menu />
+    </Route>
+    <Route path="/mymenu" exact>
+        <MyMenu />
     </Route>
     <Route path="/product/:id">
         <Product />

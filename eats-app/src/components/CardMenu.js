@@ -25,7 +25,7 @@ return(
        <div key={product._id}>
         <img src={product.imageSrc } alt={product.name} className="imgProduct" />
         <h5>{product.name}</h5>
-        <p>{product.p}{product.length}</p>
+        <p>{product.p}</p>
         <p>{product.cost}-PL <button onClick={()=> addToCart(product)} > Add</button> </p>
       </div>
       </div>

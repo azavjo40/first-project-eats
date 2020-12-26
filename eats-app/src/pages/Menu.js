@@ -28,10 +28,9 @@ className={page? 'back' :'' }
      onClick={()=>{setPage(!page)} }
      >back</button>
    </header>
-    
  <div className="contMenu">
    {page? <CartMenu addToCart={addToCart} /> :
-   <CartBasket removeFromCart={removeFromCart} cart={cart} />
+   <CartBasket removeFromCart={removeFromCart} cart={cart}  />
    }
  </div>
  </>

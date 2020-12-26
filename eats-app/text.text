@@ -536,3 +536,7 @@ const sendHandler = ()=>{
     width: 100%;
     
     }
+
+    const caertsHandler = (product)=>{
+      setCarts([...carts, {...product}])
+      }

@@ -31,8 +31,26 @@ color: #e91e63;
 .product button:hover{
 background-color: #ffff8d;
 }
-@media(max-width: 600px){
+@media(max-width: 850px){
 .product{
-width: 90%;
+width: 45%;
+}
+}
+@media(max-width: 600px){
+    .product{
+    width: 90%;
+    }
+    }
+.contMy{
+display: flex;
+width: 100%;
+flex-wrap: wrap;
+justify-content: space-around;
+flex-direction: row;
+align-items: stretch;
+}
+@media(max-width: 600px){
+.contMy{
+align-items: center;
 }
 }

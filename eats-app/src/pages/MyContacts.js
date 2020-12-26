@@ -4,12 +4,12 @@ import { useMesaage } from '../hooks/message.hook'
 import {useHistory} from 'react-router-dom'
 import '../styleComp/mycontacts.css'
 const MyContacts = ()=>{
+const [checked, setChecked] = useState(false)  
 const history = useHistory()
 const [contac, setContac] = useState({})
 const message = useMesaage()
 const auth = useContext(AuthContext)
 const [contacts, setContacts] = useState([])
-
 const contactsHandler = useCallback( async()=>{
 const requestOptions = {
 method: 'GET',
@@ -27,11 +27,9 @@ setContacts(date)
 useEffect(()=>{
 contactsHandler()
 },[contactsHandler])
-
 const addCont = (con)=>{
 setContac(con)
 }
-
 const deletehandler = useCallback( async()=>{
 const requestOptions = {
 method: 'DELETE',
@@ -47,6 +45,10 @@ message(date.message)
 history.push('/')
 }catch(e){message(e)}
 },[message, auth.token, contac._id,history])
+const inputchange = (e)=>{
+    const check = e.target.checked
+    setChecked(check)
+    }
 return(
 <div className="cont">
     {contacts.map((con, i)=>(
@@ -56,9 +58,12 @@ return(
         <p>Date {new Date(con.date).toLocaleDateString()}</p>
         <p>Message: {con.message}</p>
         <div className="delete">
-            <button onClick={()=>addCont(con)}
-                >Confirm Deletion!</button>
+        <label style={{marginRight: '10px'}} >
+                <input type="checkbox" onChange={(e)=>inputchange(e)}
+                onClick={()=>addCont(con)}
+                />Confirm Deletion!</label>
             <button onClick={()=>deletehandler()}
+            disabled={!checked}
                 > Delete</button>
         </div>
     </div>
