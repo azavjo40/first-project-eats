@@ -41,7 +41,7 @@ return(
       <NavLink className="linkBar" to="/mycontacts">MyContacts</NavLink>
     </p>
     <p onClick={logoutHandler } style={{color: 'white', cursor: 'pointer'}}>Go Out</p>
-    <h1 className="h1Close">+</h1>
+    <h1 className="h1Close">x</h1>
   </div>
   <div className={isLoad ? 'closeMenu' : 'openMenu' }>
     <img src={open} alt="open" onClick={openMenu} />

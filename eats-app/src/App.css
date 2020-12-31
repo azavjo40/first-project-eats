@@ -2,6 +2,7 @@
 top: 30px;
 left: 10px;
 position: fixed;
+z-index: 100;
 }
 #toast-container .toast{
 width: 100%;

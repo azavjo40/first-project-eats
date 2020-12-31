@@ -22,15 +22,15 @@ function Menu() {
      <button
 className={page? '' :'basket' }
      onClick={()=>{setPage(!page)} }
-     >{cart.length} - basket</button>
+     >{cart.length} - Basket</button>
      <button
 className={page? 'back' :'' }
      onClick={()=>{setPage(!page)} }
-     >back</button>
+     >Menu</button>
    </header>
  <div className="contMenu">
    {page? <CartMenu addToCart={addToCart} /> :
-   <CartBasket removeFromCart={removeFromCart} cart={cart}  />
+   <CartBasket removeFromCart={removeFromCart} cart={cart} setCart={setCart} setPage={setPage}  />
    }
  </div>
  </>

@@ -23,9 +23,7 @@ clearError()
 },[error,message, clearError])
 
 const registerHandler = async ()=>{
-
 try {
-
 const data = await request('/api/auth/register','POST',{...form})
 message(data.message)
 setForm({ name: '', surname: '', email: '', password: '', phone: ''})

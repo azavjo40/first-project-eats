@@ -24,7 +24,7 @@ return(
         <p>
             <NavLink to="/auth">Check to login</NavLink>
         </p>
-        <h1 className="h1Close">+</h1>
+        <h1 className="h1Close">x</h1>
     </div>
     <div className={isLoad ? 'closeMenu' : 'openMenu' }>
         <img src={open} alt="open" onClick={openMenu} />
