@@ -10,6 +10,7 @@ const check = e.target.checked
 if(check){
 setValu({...valu,[e.target.name]: e.target.value,cost: costs })
 }
+
 },[costs, valu])
 const reduceChange = useCallback(()=>{
 const red = cart.reduce((a, b)=>{
@@ -31,18 +32,22 @@ return(
         <label><input type="radio" name={`sos${i}`} value={`${product.name}: ${i}-ostry${i}`}
             onChange={(e)=>radioChange(e)}
           checked={checks}
+          required
           /> Ostry</label>
         <label><input type="radio" name={`sos${i}`} value={`${product.name}: ${i}-lagondy${i}`}
             onChange={(e)=>radioChange(e)}
           checked={checks}
+          required
           /> Lagondy</label>
         <label><input type="radio" name={`sos${i}`} value={`${product.name}: ${i}-mieszany${i}`}
             onChange={(e)=>radioChange(e)}
           checked={checks}
+          required
           />Mieszany</label>
         <label><input type="radio" name={`sos${i}`} value={`${product.name}: ${i}-bez-sos${i}`}
             onChange={(e)=>radioChange(e)}
           checked={checks}
+          required
           /> Bez-Sos</label>
       </div>
       <h5>{product.cost} - PL</h5>

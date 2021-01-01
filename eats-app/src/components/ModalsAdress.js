@@ -70,7 +70,7 @@ return (
       <Button variant="primary" disabled={isLoading} 
       onClick={()=>{ orderHandler()
       setButt(true)
-      setTimeout(()=>setButt(false),1000)
+      setTimeout(()=>setButt(false),1500)
       }}>
         {butt? 'Loading…' : 'Click to Buy'}
       </Button>

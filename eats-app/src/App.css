@@ -11,3 +11,7 @@ background-color: #1de9b6;
 color: #000;
 text-align: center;
 }
+.homeButton{
+    position: fixed;
+    bottom: 20px;
+}

@@ -1,22 +1,11 @@
-import React from 'react'
-import { useState } from 'react'
-import {Button} from 'react-bootstrap'
-import Login from '../components/Login'
-import Register from '../components/Register'
+import {useState} from 'react'
+import MyLogin from '../components/MyLogin'
+import MyRegister from '../components/MyRegister'
 function Auth() {
-const [isLoading, setIsloading] = useState(false)
-const handlChange = (e)=>{
-e.preventDefault()
-setIsloading( !isLoading )
-}
+  const [islo, setIslo] = useState(true)
 return (
 <>
-  {isLoading ?
-  <Login /> :
-  <Register />}
-  <Button style={{marginTop: "3rem", marginLeft: '35%'}} variant="primary" onClick={handlChange}>
-    {isLoading ? "Go to Register" :"Go to Login"}
-  </Button>
+{islo ? <MyLogin islo={islo} setIslo={setIslo} />:<MyRegister islo={islo} setIslo={setIslo}  />}
 </>
 )
 }
