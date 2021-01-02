@@ -1,17 +1,19 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import '../styleComp/menu.css'
 import ModalsAdress from './ModalsAdress'
-function CartBasket({cart, removeFromCart, setCart}) {
-var [valu, setValu] = useState([])
+function CartBasket({cart, removeFromCart, setCart, setPage, page}) {
+  const [show, setShow] = useState(false);
+  const handleShow = () => setShow(true);
+//var [valu, setValu] = useState([])
+const [spare, setSpare] = useState([])
 const [checks, setChecks] = useState(null)
+const [checked, setChecked] = useState(false)
 const [costs, setCosts] = useState([])
 const radioChange = useCallback((e)=>{
 const check = e.target.checked
-if(check){
-setValu({...valu,[e.target.name]: e.target.value,cost: costs })
-}
-
-},[costs, valu])
+setChecked(check)
+setSpare({...spare, [e.target.name]: e.target.value})
+},[costs, spare])
 const reduceChange = useCallback(()=>{
 const red = cart.reduce((a, b)=>{
 return a + b.cost
@@ -20,7 +22,7 @@ setCosts(red)
 },[cart])
 useEffect(()=>{
 reduceChange()
-},[reduceChange, valu])
+},[reduceChange])
 return(
 <div className="cont">
   {cart.map((product, i)=> (
@@ -29,40 +31,44 @@ return(
       <h5>{product.name}</h5>
       <p style={{color: 'red'}}>выберете sos !!! </p>
       <div className="input">
-        <label><input type="radio" name={`sos${i}`} value={`${product.name}: ${i}-ostry${i}`}
+        <label><input type="radio" name={`sos${i}`} value={`${product.name} : ostry`}
             onChange={(e)=>radioChange(e)}
           checked={checks}
-          required
+          
           /> Ostry</label>
-        <label><input type="radio" name={`sos${i}`} value={`${product.name}: ${i}-lagondy${i}`}
+        <label><input type="radio" name={`sos${i}`} value={`${product.name} : lagondy`}
             onChange={(e)=>radioChange(e)}
           checked={checks}
-          required
+       
           /> Lagondy</label>
-        <label><input type="radio" name={`sos${i}`} value={`${product.name}: ${i}-mieszany${i}`}
+        <label><input type="radio" name={`sos${i}`} value={`${product.name} : mieszany`}
             onChange={(e)=>radioChange(e)}
           checked={checks}
-          required
+         
           />Mieszany</label>
-        <label><input type="radio" name={`sos${i}`} value={`${product.name}: ${i}-bez-sos${i}`}
+        <label><input type="radio" name={`sos${i}`} value={`${product.name} : bez-sos`}
             onChange={(e)=>radioChange(e)}
           checked={checks}
-          required
+       
           /> Bez-Sos</label>
       </div>
       <h5>{product.cost} - PL</h5>
       <button className="remove" value="" onClick={()=>{ removeFromCart(product)
-        setValu(null)
+        setSpare(null)
         setChecks(false)
         setTimeout(()=>setChecks(null),1000)
         }}
         >Remove</button>
-
+          
     </div>
-
+    <button className="buyButton" onClick={handleShow}
+    disabled={!checked}
+    >Next Buy+ {costs}-PL</button>
   </div>
   ))}
-  <ModalsAdress cost={costs} valu={valu} setCart={setCart}  />
+  <ModalsAdress setShow={setShow} show={show} costs={costs}
+   setCart={setCart} setPage={setPage} page={page}  
+    setSpare={setSpare} spare={spare}  />
 </div>
 )
 

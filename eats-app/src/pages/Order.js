@@ -56,18 +56,8 @@ return(
     <h5>Name: {ord.name}</h5>
     <p>Phone: {ord.phone}</p>
     <p>Message: {ord.myMessage}</p>
-    <p>{ord.valu.sos0}</p>
-    <p>{ord.valu.sos1}</p>
-    <p>{ord.valu.sos2}</p>
-    <p>{ord.valu.sos3}</p>
-    <p>{ord.valu.sos4}</p>
-    <p>{ord.valu.sos5}</p>
-    <p>{ord.valu.sos6}</p>
-    <p>{ord.valu.sos7}</p>
-    <p>{ord.valu.sos8}</p>
-    <p>{ord.valu.sos9}</p>
-    <p>{ord.valu.sos10}</p>
-    <p>Total Amount Cost: {ord.valu.cost}+PLN</p>
+    <p>Orders: {ord.spares}</p>
+    <p>Total Amount {ord.costs} + PLN</p>
     <p>Date {new Date(ord.date).toLocaleDateString()}</p>
     <div className="delete">
       <label style={{marginRight: '10px'}}>

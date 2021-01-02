@@ -2,10 +2,14 @@ import {useState, useEffect} from 'react'
 import {Modal, Form ,Button, Col, Row } from 'react-bootstrap'
 import { useHttp } from '../hooks/http.hook'
 import { useMesaage } from '../hooks/message.hook'
-
+import {useHistory} from 'react-router-dom'
 function MyRegister({islo, setIslo}) {
 const [show, setShow] = useState(true);
-const handleClose = () => setShow(false);
+const history = useHistory()
+const handleClose = () =>{
+  setShow(false)
+  history.push('/menu')
+} 
 const message = useMesaage()
 const { request, loading, error, clearError} = useHttp()
 

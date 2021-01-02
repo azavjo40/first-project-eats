@@ -30,7 +30,8 @@ className={page? 'back' :'' }
    </header>
  <div className="contMenu">
    {page? <CartMenu addToCart={addToCart} /> :
-   <CartBasket removeFromCart={removeFromCart} cart={cart} setCart={setCart} setPage={setPage}  />
+   <CartBasket removeFromCart={removeFromCart} 
+   cart={cart} setCart={setCart} setPage={setPage} page={page} />
    }
  </div>
  </>

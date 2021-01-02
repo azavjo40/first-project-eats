@@ -3,9 +3,15 @@ import {Form ,Button,Modal } from 'react-bootstrap'
 import { AuthContext } from '../context/AuthContext'
 import { useHttp } from '../hooks/http.hook'
 import { useMesaage } from '../hooks/message.hook'
+import {useHistory} from 'react-router-dom'
 function MyLogin({islo, setIslo}) {
-const [show, setShow] = useState(true);
-const handleClose = () => setShow(false);
+const [show, setShow] = useState(true)
+const history = useHistory()
+const handleClose = () =>{
+  setShow(false)
+  history.push('/menu')
+} 
+
 // все логика логина тут
 const auth = useContext(AuthContext)
 const message = useMesaage()

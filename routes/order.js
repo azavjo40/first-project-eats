@@ -12,20 +12,20 @@ check('address', 'Введите Address').exists()
 ],
 async (req, res)=>{
 try{
-    const errors = validationResult(req)
-    if (!errors.isEmpty()) {
-    return res.status(400).json({
-    errors: errors.array(),
-    message: 'Некорректный данные выберите sos и заполните имя телефон адрес'
-    })
-    }
+const errors = validationResult(req)
+if (!errors.isEmpty()) {
+return res.status(400).json({
+errors: errors.array(),
+message: 'Некорректный данные выберите sos и заполните имя телефон адрес'
+})
+}
 const {
-valu: { sos0,sos1,sos2,cola3,sos4,sos5,sos6,cola7,cola8,cola9,cola10,cost},
-name, phone, address, myMessage
+costs,
+name, phone, address, myMessage, spares
 } = req.body
 const order = new Order({
-valu: { sos0,sos1,sos2,cola3,sos4,sos5,sos6,cola7,cola8,cola9,cola10,cost},
-name, phone, address, myMessage
+costs,
+name, phone, address, myMessage, spares
 })
 await order.save()
 res.status(201).json({message: 'спасибо ближайшей время ответим вам доставим заказь'})

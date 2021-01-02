@@ -3,27 +3,29 @@ import {useState, useEffect} from 'react'
 import { useHttp } from '../hooks/http.hook'
 import { useMesaage } from '../hooks/message.hook'
 import '../styleComp/menu.css'
-function ModalsAdress({cost,valu, setCart}) {
+function ModalsAdress({setShow, show, costs, setCart, setPage, page, spare}) {
 const message = useMesaage()
 const { request, error, clearError,isLoading} = useHttp()
 const [form, setForm] = useState({
 name:'', phone:'', address:'', myMessage:''
 })
 const [butt, setButt] = useState(false)
-const [show, setShow] = useState(false);
+
 const handleClose = () => setShow(false);
-const handleShow = () => setShow(true);
+
 const changehandler = (event)=>{
-setForm({...form, [event.target.name]: event.target.value,valu})
+setForm({...form, [event.target.name]: event.target.value, costs})
 }
 const orderHandler = async ()=>{
+const spares = JSON.stringify(spare)
 try {
-const data = await request('/api/order','POST',{...form})
+const data = await request('/api/order','POST',{...form, spares})
 message(data.message)
 setTimeout(()=>{
-  setForm({ name:'', phone:'', address:'', myMessage:''})
+setForm({ name:'', phone:'', address:'', myMessage:''})
 setCart([])
 handleClose()
+setPage(!page)
 },1500)
 
 } catch (e) {}
@@ -34,7 +36,6 @@ clearError()
 }, [ message, clearError, error]);
 return (
 <>
-  <button className="buyButton" onClick={handleShow}>Next Buy+ {cost}-PL</button>
   <Modal show={show} onHide={handleClose} backdrop="static" keyboard={false}>
     <Modal.Header closeButton>
       <Modal.Title>Your Address</Modal.Title>
@@ -67,11 +68,10 @@ return (
     </Modal.Body>
     <Modal.Footer style={{justifyContent: 'space-around'}}>
       <Button variant="secondary" onClick={handleClose}> Back </Button>
-      <Button variant="primary" disabled={isLoading} 
-      onClick={()=>{ orderHandler()
-      setButt(true)
-      setTimeout(()=>setButt(false),1500)
-      }}>
+      <Button variant="primary" disabled={isLoading} onClick={()=>{ orderHandler()
+        setButt(true)
+        setTimeout(()=>setButt(false),1500)
+        }}>
         {butt? 'Loading…' : 'Click to Buy'}
       </Button>
     </Modal.Footer>

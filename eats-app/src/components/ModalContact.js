@@ -2,9 +2,14 @@ import {useState, useEffect} from 'react'
 import { useHttp } from '../hooks/http.hook'
 import { useMesaage } from '../hooks/message.hook'
 import {Form ,Button,Modal} from 'react-bootstrap'
+import {useHistory} from 'react-router-dom'
 function ModalContact() {
 const [show, setShow] = useState(true);
-const handleClose = () => setShow(false);
+const history = useHistory()
+const handleClose = () =>{
+  setShow(false)
+  history.push('/menu')
+} 
 const message = useMesaage()
 const [form, setForm] = useState({ name: '', phone: '', message: ''})
 const changehandler = (event)=>{
