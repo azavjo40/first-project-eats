@@ -2,9 +2,8 @@ import React, { useCallback, useEffect, useState } from 'react'
 import '../styleComp/menu.css'
 import ModalsAdress from './ModalsAdress'
 function CartBasket({cart, removeFromCart, setCart, setPage, page}) {
-  const [show, setShow] = useState(false);
-  const handleShow = () => setShow(true);
-//var [valu, setValu] = useState([])
+  const [show, setShow] = useState(false)
+  const handleShow = () => setShow(true)
 const [spare, setSpare] = useState([])
 const [checks, setChecks] = useState(null)
 const [checked, setChecked] = useState(false)
