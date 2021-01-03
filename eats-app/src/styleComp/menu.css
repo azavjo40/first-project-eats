@@ -4,7 +4,8 @@ width: 100%;
 flex-wrap: wrap;
 justify-content: space-around;
 flex-direction: row;
-align-items: stretch;
+align-items:stretch;
+margin-bottom: 30px;
 }
 @media(max-width: 600px){
 .contMenu{
@@ -18,23 +19,26 @@ position: fixed;
 right: 30px;
 top: 50px;
 cursor: pointer;
-background-color:#00897b;
-color: white;
+border: 1px solid#FFF0F5;
 border-radius: 5px;
+background: #00e676;
+color: black;
+font-size: 16px;
 transition: .5s;
 width: 100px;
 }
 .header button:focus{
 outline: none;
+background-color: #FFF0F5;
 }
 .header button:hover{
-background-color: #80cbc4;
-border: solid .5px #d4e157;
+box-shadow: 0px 0px 2px 3px #69f0ae;
 color: black;
 }
 .back, .basket{
 display: none;
 }
+
 .input{
 display: flex;
 justify-content: space-around;
@@ -46,20 +50,24 @@ margin: 10px;
 .buyButton{
 position: fixed;
 bottom: 0px;
-bottom: 0px;
 cursor: pointer;
-background-color:#00897b;
-color: white;
+appearance: none;
+border: 1px solid #D3D3D3;
 border-radius: 5px;
+background: #00e676;
+color: black;
+font-size: 16px;
 transition: .5s;
 width: 150px;
 right: 30px;
 }
 .buyButton:focus{
 outline: none;
+
 }
+
 .buyButton:hover{
-    background-color: #80cbc4;
-    border: solid .5px #d4e157;
-    color: black;
-    }
+box-shadow: 0px 0px 2px 3px #69f0ae;
+background-color:#00c853 ;
+color: black;
+}

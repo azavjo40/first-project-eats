@@ -1,0 +1,51 @@
+.pro{
+    background-color: #F0FFFF;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border-radius: 5px;
+    position: relative;
+    margin-top: 25px;
+    justify-content: center;
+    padding: 5px;
+    }
+
+    .pro label{
+    font-size: 10px;
+    padding: 0px;
+    margin: 3px;
+    color: black;
+    }
+    .product div{
+    position: relative;
+    }
+
+    .pro div button{
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    appearance: none;
+    border: 1px solid #D3D3D3;
+    border-radius: 5px;
+    background: #F0FFFF;
+    color: black;
+    font-size: 16px;
+    }
+    .pro div button:focus{
+    outline: none;
+    background-color: #FFF0F5;
+    }
+    .pro div button:hover{
+    background-color: #F0F8FF;
+    box-shadow: 0px 0px 2px 3px #FFE4E1;
+    }
+    @media(max-width: 375px){
+    .product{
+    width: 80%;
+    }
+    }
+    @media(max-width: 600px){
+    .contMy{
+    align-items: center;
+    }
+    }

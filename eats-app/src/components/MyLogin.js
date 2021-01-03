@@ -41,7 +41,6 @@ return (
       <Modal.Title>Modal Login</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-      <Form>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Login</Form.Label>
           <Form.Control type="email" placeholder="Enter email" onChange={changehandler } name="email"
@@ -56,7 +55,6 @@ return (
             value={form.password} />
         </Form.Group>
         <Button variant="primary" type="submit" onClick={loginHandler} disabled={loading}> Login</Button>
-      </Form>
     </Modal.Body>
     <Modal.Footer>
       <Button variant="warning" onClick={()=>{setIslo(!islo)}}

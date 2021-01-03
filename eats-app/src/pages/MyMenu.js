@@ -2,7 +2,7 @@ import { useState ,useEffect, useCallback, useContext} from 'react'
 import { AuthContext } from '../context/AuthContext'
 import { useMesaage } from '../hooks/message.hook'
 import {useHistory} from 'react-router-dom'
-import '../styleComp/cardMenu.css'
+import '../styleComp/myMenu.css'
 function MyMenu() {
 const [checked, setChecked] = useState(false)
 const history = useHistory()
@@ -41,7 +41,7 @@ try{
 const res = await fetch('/api/delete/menu',requestOptions )
 const date = await res.json()
 message(date.message)
-history.push('/')
+history.push('/menu')
 }catch(e){message(e)}
 },[message, auth.token,del, history])
 const addCont = (product)=>{
@@ -54,16 +54,16 @@ const check = e.target.checked
 return(
 <div className="contMy">
     {products.map((product, i)=> (
-    <div className="product" key={ i}>
+    <div className="prod" key={ i}>
         <div key={product._id}>
             <img src={product.imageSrc } alt={product.name} className="imgProduct" />
-            <h5>{product.name}</h5>
+            <p>{product.name}</p>
             <p>{product.p}{product.length}</p>
-            <label style={{marginRight: '10px'}} >
+            <p >
                 <input type="checkbox" onChange={(e)=>inputchange(e)}
                 onClick={()=>addCont(product)}
                 />
-                Confirm Deletion!</label>
+                Confirm Deletion!</p>
             <button disabled={!checked} style={{marginLeft: '10px'}} onClick={()=>deletehandler()}
                 > Delete</button>
         </div>

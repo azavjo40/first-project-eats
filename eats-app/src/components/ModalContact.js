@@ -33,10 +33,10 @@ return (
 <>
     <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-            <Modal.Title>Write To Us</Modal.Title>
+            <Modal.Title>Write To Us </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <Form>
+                 <Form.Label>Call Me +48 225 36 32 22</Form.Label>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="name" placeholder="Name" onChange={changehandler } name="name"
@@ -55,7 +55,6 @@ return (
                 <Button variant="primary" type="Send" onClick={contactHandler} disabled={loading}>
                     Send Me
                 </Button>
-            </Form>
         </Modal.Body>
     </Modal>
 </>

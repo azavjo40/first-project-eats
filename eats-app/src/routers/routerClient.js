@@ -21,30 +21,21 @@ return (
     <Route path="/create" exact>
         <Create />
     </Route>
-    <Route path="/" exact>
-        <Home />
-    </Route>
     <Route path="/menu" exact>
         <Menu />
     </Route>
     <Route path="/mymenu" exact>
         <MyMenu />
     </Route>
-    <Route path="/product/:id">
-        <Product />
-    </Route>
     <Route path="/mycontacts" exact>
         <MyContacts />
     </Route>
-    <Redirect to="/" />
+    <Redirect to="/menu" />
 </Switch>
 )
 }
 return (
 <Switch>
-    <Route path="/" exact>
-        <Home />
-    </Route>
     <Route path="/menu" exact>
         <Menu />
     </Route>
@@ -54,7 +45,7 @@ return (
     <Route path="/auth" exact>
         <Auth />
     </Route>
-    <Redirect to="/" />
+    <Redirect to="/menu" />
 </Switch>
 )
 }

@@ -23,9 +23,6 @@ return(
   <div className={isLoad ? 'openM' : 'menuNav' } onClick={()=>setIsLoad(false)}>
     <h3>Personal-Area</h3>
     <p>
-      <NavLink to="/">Home</NavLink>
-    </p>
-    <p>
       <NavLink to="/menu">Menu</NavLink>
     </p>
     <p>

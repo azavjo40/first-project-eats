@@ -44,7 +44,6 @@ return (
             <Modal.Title>Modal Register</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <Form>
                 <Form.Label>Register</Form.Label>
                 <Row>
                     <Col>
@@ -77,7 +76,6 @@ return (
                 <Button variant="primary" type="submit" onClick={registerHandler} disabled={loading}>
                     Register
                 </Button>
-            </Form>
         </Modal.Body>
         <Modal.Footer>
             <Button variant="warning" onClick={()=>{setIslo(!islo)}}

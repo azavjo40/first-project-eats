@@ -18,16 +18,16 @@ function Menu() {
  }
  return(
    <>
-   <header className="header">
-     <button
+       <header className="header">
+    <button
 className={page? '' :'basket' }
-     onClick={()=>{setPage(!page)} }
-     >{cart.length} - Basket</button>
-     <button
+    onClick={()=>{setPage(!page)} }
+    >{cart.length} - Basket</button>
+    <button
 className={page? 'back' :'' }
-     onClick={()=>{setPage(!page)} }
-     >Menu</button>
-   </header>
+    onClick={()=>{setPage(!page)} }
+    >Menu</button>
+  </header>
  <div className="contMenu">
    {page? <CartMenu addToCart={addToCart} /> :
    <CartBasket removeFromCart={removeFromCart} 

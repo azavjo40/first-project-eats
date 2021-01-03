@@ -8,7 +8,7 @@ method: 'GET',
 redirect: 'follow'
 }
 try {
-  const res = await fetch('/api/allcreate',requestOptions)
+const res = await fetch('/api/allcreate',requestOptions)
 const data = await res.json()
 setProducts(data)
 } catch (e) {}
@@ -17,20 +17,23 @@ setProducts(data)
 useEffect(()=>{
 fetchProducts()
 },[fetchProducts])
-
 return(
-  <>
-    {products.map((product, i)=> (
-     <div className="product" key={ i}>
-       <div key={product._id}>
-        <img src={product.imageSrc } alt={product.name} className="imgProduct" />
-        <h5>{product.name}</h5>
-        <p>{product.p}</p>
-        <p>{product.cost}-PL <button onClick={()=> addToCart(product)} > Add To Basket</button> </p>
-      </div>
-      </div>
-    ))}
-  </>
+<>
+  {products.map((product, i)=> (
+  <div className="product" key={ i}>
+    <div key={product._id} className="intent">20-30 M</div>
+    <div>
+      <img src={product.imageSrc } alt={product.name} className="imgProduct" />
+    </div>
+    <div>
+      <p>{product.name}</p>
+      <p>{product.cost}-PL</p>
+      <p>{product.p}</p>
+      <button onClick={()=> addToCart(product)} >Dodaj</button>
+    </div>
+  </div>
+  ))}
+</>
 )
 }
 

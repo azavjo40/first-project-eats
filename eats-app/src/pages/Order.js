@@ -42,7 +42,7 @@ try{
 const res = await fetch(`/api/order/${contac._id}`,requestOptions )
 const date = await res.json()
 message(date.message)
-history.push('/')
+history.push('/menu')
 }catch(e){message(e)}
 },[message, auth.token, contac._id,history])
 const inputchange = (e)=>{
@@ -53,12 +53,12 @@ return(
 <div className="cont">
   {contacts.map((ord, i)=>(
   <div className="cart" key={ord._id}>
-    <h5>Name: {ord.name}</h5>
+    <p>Name: {ord.name}</p>
     <p>Phone: {ord.phone}</p>
     <p>Message: {ord.myMessage}</p>
     <p>Orders: {ord.spares}</p>
     <p>Total Amount {ord.costs} + PLN</p>
-    <p>Date {new Date(ord.date).toLocaleDateString()}</p>
+    <p>Date {new Date(ord.date).toLocaleDateString()}-{new Date(ord.date).toLocaleTimeString()}</p>
     <div className="delete">
       <label style={{marginRight: '10px'}}>
         <input type="checkbox" onChange={(e)=>inputchange(e)}

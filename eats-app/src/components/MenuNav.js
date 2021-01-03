@@ -13,16 +13,13 @@ return(
     <div className={isLoad ? 'openM' : 'menuNav' } onClick={()=>setIsLoad(false)}>
         <h3>East-Kebab</h3>
         <p>
-            <NavLink to="/">Home</NavLink>
-        </p>
-        <p>
             <NavLink to="/menu">Menu</NavLink>
         </p>
         <p>
             <NavLink to="/contact">Contact</NavLink>
         </p>
         <p>
-            <NavLink to="/auth">Check to login</NavLink>
+            <NavLink to="/auth">Auth</NavLink>
         </p>
         <h1 className="h1Close">x</h1>
     </div>

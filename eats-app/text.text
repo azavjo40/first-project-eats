@@ -540,3 +540,92 @@ const sendHandler = ()=>{
     const caertsHandler = (product)=>{
       setCarts([...carts, {...product}])
       }
+
+      <div className="input">
+      <label><input type="radio" name={`sos${i}`} value={`${product.name}${i}-ostry${i}`} onChange={(e)=>radioChange(e)}
+        
+           /> Ostry</label>
+      <label><input type="radio" name={`sos${i}`}  value={`${product.name}${i}-lagondy${i}`} onChange={(e)=>radioChange(e)}
+         
+        /> Lagondy</label>
+      <label><input type="radio" name={`sos${i}`}  value={`${product.name}${i}-mieszany${i}`} onChange={(e)=>radioChange(e)}
+ 
+       />Mieszany</label>
+      <label><input type="radio" name={`sos${i}`}  value={`${product.name}${i}-bez-sos${i}`} onChange={(e)=>radioChange(e)}
+ 
+        /> Bez-Sos</label>
+    </div>
+
+    {...valu,[e.target.name]: e.target.value,cost: costs }
+
+
+    <header className="header">
+    <button
+className={page? '' :'basket' }
+    onClick={()=>{setPage(!page)} }
+    >{cart.length} - Basket</button>
+    <button
+className={page? 'back' :'' }
+    onClick={()=>{setPage(!page)} }
+    >Menu</button>
+  </header>
+
+
+  import {useState,useContext} from 'react'
+import '../styleComp/create.css'
+import { useMesaage } from '../hooks/message.hook'
+import {AuthContext} from '../context/AuthContext'
+function Create() {
+const auth = useContext(AuthContext)
+const message = useMesaage()
+const [form, setForm] = useState({name: '', cost: '', p: '' })
+const [file, setFile] = useState()
+const changehandler = (event) => {
+setForm({ ...form, [event.target.name]: event.target.value })
+}
+const fileChange = (e) => {
+const fileField = e.target.files[0]
+setFile(fileField)
+}
+const orderHandler = async ()=>{
+try{
+const formdata = new FormData();
+formdata.append("name", form.name);
+formdata.append("cost", form.cost);
+formdata.append("p", form.p);
+formdata.append("file", file);
+const requestOptions = {
+method: 'POST',
+headers: {
+"Authorization": auth.token
+},
+body: formdata,
+redirect: 'follow'
+}
+const response = await fetch("/api/create", requestOptions)
+const data = await response.json()
+  message(data.message)
+setForm({name: '', cost: '',imageSrc: '', p: '' })
+setFile('')
+}catch(e){
+message(e.message)
+}
+}
+return ( <div className="conCreate">
+  <button onClick={ orderHandler }>
+    Send </button>
+  < textarea rows="2" cols="55" name="p" value={ form.p } onChange={ changehandler }> </textarea>
+    <label> Paragraph </label> <input type="file" accept="image/png, image / jpeg " onChange={ (e)=> {
+    fileChange(e)
+    }
+    }
+    /> < label> Image </label>
+      <input type="number" name="cost" value={form.cost} onChange={changehandler} /> <label> Cost </label> <input
+        type="text" name="name" value={ form.name } onChange={changehandler} /> <label> Name </label>
+</div>
+)
+}
+export default Create
+
+{islo ? <MyLogin islo={islo} setIslo={setIslo}
+ />:<MyRegister islo={islo} setIslo={setIslo}  />}

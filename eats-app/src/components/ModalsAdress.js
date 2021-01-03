@@ -41,8 +41,6 @@ return (
       <Modal.Title>Your Address</Modal.Title>
     </Modal.Header>
     <Modal.Body>
-
-      <Form>
         <Form.Label>Name and Phone</Form.Label>
         <Row>
           <Col>
@@ -53,7 +51,6 @@ return (
           <Form.Control placeholder="Phone..." name="phone" value={form.phone} onChange={changehandler} />
           </Col>
         </Row>
-
         <Form.Group controlId="formGridAddress1">
           <Form.Label>Address</Form.Label>
           <Form.Control placeholder="Ul Janinowka 1111 m.11" name="address" value={form.address}
@@ -64,7 +61,6 @@ return (
           <Form.Label>Additional Information</Form.Label>
           <Form.Control as="textarea" rows={3} name="myMessage" value={form.myMessage} onChange={changehandler} />
         </Form.Group>
-      </Form>
     </Modal.Body>
     <Modal.Footer style={{justifyContent: 'space-around'}}>
       <Button variant="secondary" onClick={handleClose}> Back </Button>
