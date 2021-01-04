@@ -1,7 +1,7 @@
 const express = require('express')
 const config = require('config')
 const passport = require('passport')
-//const path = require('path')
+const path = require('path')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 const cors = require('cors')
@@ -22,12 +22,12 @@ app.use(bodyParser.json())
 // смотрить запрос
 app.use(morgan('dev'))
 // тут даем фронтент если продакшн то что бы указать статичиский папку наш
-//if (process.env.NODE_ENV === 'production') {
-// app.use('/', express.static(path.join(__dirname, 'client', 'build')))
-// app.get('*', (req, res) => {
-// res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-//})
-//}
+if (process.env.NODE_ENV === 'production') {
+ app.use('/', express.static(path.join(__dirname, 'eats-app', 'build')))
+ app.get('*', (req, res) => {
+ res.sendFile(path.resolve(__dirname, 'eats-app', 'build', 'index.html'))
+})
+}
 //passport.js
 app.use(passport.initialize())
 // передаем паспорт
