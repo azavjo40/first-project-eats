@@ -56,9 +56,10 @@ return(
     <p>Name: {ord.name}</p>
     <p>Phone: {ord.phone}</p>
     <p>Message: {ord.myMessage}</p>
+    <p>Kebab: {JSON.parse(ord.arrays).arr}</p>
     <p>Orders: {ord.spares}</p>
     <p>Total Amount {ord.costs} + PLN</p>
-    <p>Date {new Date(ord.date).toLocaleDateString()}-{new Date(ord.date).toLocaleTimeString()}</p>
+    <p>Date {new Date(ord.date).toLocaleTimeString()} - {new Date(ord.date).toLocaleDateString()}</p>
     <div className="delete">
       <label style={{marginRight: '10px'}}>
         <input type="checkbox" onChange={(e)=>inputchange(e)}

@@ -3,7 +3,7 @@ import {useState, useEffect} from 'react'
 import { useHttp } from '../hooks/http.hook'
 import { useMesaage } from '../hooks/message.hook'
 import '../styleComp/menu.css'
-function ModalsAdress({setShow, show, costs, setCart, setPage, page, spare}) {
+function ModalsAdress({setShow, show, costs, setCart, setPage, page, spare, array}) {
 const message = useMesaage()
 const { request, error, clearError,isLoading} = useHttp()
 const [form, setForm] = useState({
@@ -18,8 +18,9 @@ setForm({...form, [event.target.name]: event.target.value, costs})
 }
 const orderHandler = async ()=>{
 const spares = JSON.stringify(spare)
+const arrays = JSON.stringify(array)
 try {
-const data = await request('/api/order','POST',{...form, spares})
+const data = await request('/api/order','POST',{...form, spares, arrays})
 message(data.message)
 setTimeout(()=>{
 setForm({ name:'', phone:'', address:'', myMessage:''})

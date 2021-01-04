@@ -6,8 +6,9 @@ justify-content: space-around;
 align-content: stretch;
 align-items: center;
 background-color: #343a40;
-z-index: 1;
+z-index: 100;
 padding-top: 10px;
+position: relative;
 }
 
 .menuNav a{
@@ -23,6 +24,7 @@ cursor: pointer;
 .h1Close{
 color:white;
 cursor: pointer;
+font-size: 30px;
 }
 
 .h1Close:hover{
@@ -63,9 +65,9 @@ justify-content: space-around;
 align-content: stretch;
 align-items: center;
 background-color: #343a40;
-
 width: 100%;
-
+position: relative;
+z-index: 100;
 }
 
 .openM a{

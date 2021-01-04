@@ -27,6 +27,7 @@ try{
 const data = await request('/api/auth/contact','POST', {...form})
 message(data.message)
 setForm({name: '', phone: '', message: ''})
+handleClose()
 }catch(e){}
 }
 return (
@@ -52,7 +53,9 @@ return (
                     <Form.Control as="textarea" rows={3} onChange={changehandler } name="message"
                         value={form.message} />
                 </Form.Group>
-                <Button variant="primary" type="Send" onClick={contactHandler} disabled={loading}>
+                <Button variant="primary" type="Send" 
+                onClick={()=>{contactHandler()
+                }} disabled={loading}>
                     Send Me
                 </Button>
         </Modal.Body>

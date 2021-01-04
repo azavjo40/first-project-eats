@@ -1,8 +1,8 @@
 #toast-container{
-top: 30px;
+top: 50px;
 left: 10px;
 position: fixed;
-z-index: 100;
+z-index: 90;
 }
 #toast-container .toast{
 width: 100%;

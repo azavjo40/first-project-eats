@@ -42,6 +42,7 @@ const data = await response.json()
 message(data.message)
 setForm({name: '', cost: '',imageSrc: '', p: '' })
 setFile('')
+handleClose()
 }catch(e){
 message(e.message)
 }

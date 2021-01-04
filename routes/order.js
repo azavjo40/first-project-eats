@@ -21,11 +21,11 @@ message: 'Некорректный данные выберите sos и запо
 }
 const {
 costs,
-name, phone, address, myMessage, spares
+name, phone, address, myMessage, spares, arrays
 } = req.body
 const order = new Order({
 costs,
-name, phone, address, myMessage, spares
+name, phone, address, myMessage, spares, arrays
 })
 await order.save()
 res.status(201).json({message: 'спасибо ближайшей время ответим вам доставим заказь'})

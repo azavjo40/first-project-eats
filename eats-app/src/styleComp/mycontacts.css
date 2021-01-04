@@ -15,12 +15,14 @@ align-items: center;
 }
 
 .cart{
+margin: 20px;
 background-color: #F0FFFF;
 display: flex;
 flex-direction: column;
 width: 300px;
 border-radius: 5px;
-position: relative;
+justify-content: space-between;
+flex-wrap:  wrap;
 }
 .cart  p{
 font-size: 15px;

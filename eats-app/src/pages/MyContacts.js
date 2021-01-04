@@ -55,13 +55,13 @@ return(
     <div className="cart" key={con._id}>
         <p>Name: {con.name}</p>
         <p>Phone: {con.phone}</p>
-        <p>Date {new Date(con.date).toLocaleDateString()}</p>
+        <p>Date {new Date(con.date).toLocaleTimeString()} - {new Date(con.date).toLocaleDateString()}</p>
         <p>Message: {con.message}</p>
         <div className="delete">
-            <p style={{marginRight: '10px'}}>
+            <label  style={{marginRight: '10px'}} >
                 <input type="checkbox" onChange={(e)=>inputchange(e)}
                 onClick={()=>addCont(con)}
-                />Confirm Deletion!</p>
+                />Confirm Deletion!</label>
             <button onClick={()=>deletehandler()}
                 disabled={!checked}
                 > Delete</button>
