@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 // смотрить запрос
 app.use(morgan('dev'))
+
 // тут даем фронтент если продакшн то что бы указать статичиский папку наш
 if (process.env.NODE_ENV === 'production') {
  app.use('/', express.static(path.join(__dirname, 'eats-app', 'build')))
