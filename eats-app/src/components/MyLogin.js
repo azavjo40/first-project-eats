@@ -29,7 +29,7 @@ clearError()
 // fn login
 const loginHandler = async () =>{
 try{
-const data = await request('http://azam-app-tj-js.pl/api/auth/login','POST', {...form})
+const data = await request('https://azam-app-tj-js.pl/api/auth/login','POST', {...form})
 auth.login(data.token, data.userId)
 setForm({ email: '', password: ''})
 }catch(e){}

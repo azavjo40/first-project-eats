@@ -24,7 +24,7 @@ clearError()
 },[error,message, clearError])
 const contactHandler = async () =>{
 try{
-const data = await request('http://azam-app-tj-js.pl/api/auth/contact','POST', {...form})
+const data = await request('https://azam-app-tj-js.pl/api/auth/contact','POST', {...form})
 message(data.message)
 setForm({name: '', phone: '', message: ''})
 handleClose()

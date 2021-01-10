@@ -19,7 +19,7 @@ headers: {
 redirect: 'follow'
 }
 try{
-const res = await fetch('http://azam-app-tj-js.pl/api/order',requestOptions )
+const res = await fetch('https://azam-app-tj-js.pl/api/order',requestOptions )
 const date = await res.json()
 setContacts(date)
 }catch(e){}
@@ -39,7 +39,7 @@ headers: {
 redirect: 'follow'
 }
 try{
-const res = await fetch(`/api/order/${contac._id}`,requestOptions )
+const res = await fetch(`https://azam-app-tj-js.pl/api/order/${contac._id}`,requestOptions )
 const date = await res.json()
 message(date.message)
 history.push('/menu')

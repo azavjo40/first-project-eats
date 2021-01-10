@@ -16,7 +16,7 @@ method: 'GET',
 redirect: 'follow'
 }
 try {
-const res = await fetch('http://azam-app-tj-js.pl/api/allcreate',requestOptions)
+const res = await fetch('https://azam-app-tj-js.pl/api/allcreate',requestOptions)
 const data = await res.json()
 setProducts(data)
 } catch (e) {}
