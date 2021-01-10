@@ -33,9 +33,6 @@ res.status(201).json({message: 'спасибо ближайшей время о�
 }
 )
 router.get('/order',
-passport.authenticate('jwt', {
-session: false
-}),
 async (req, res)=>{
 try{
 const order = await Order.find()
