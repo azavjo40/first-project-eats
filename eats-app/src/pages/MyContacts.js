@@ -19,7 +19,7 @@ headers: {
 redirect: 'follow'
 }
 try{
-const res = await fetch('/api/auth/mycontacts',requestOptions )
+const res = await fetch('http://azam-app-tj-js.pl/api/auth/mycontacts',requestOptions )
 const date = await res.json()
 setContacts(date)
 }catch(e){}
