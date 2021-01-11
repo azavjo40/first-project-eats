@@ -20,7 +20,7 @@ const orderHandler = async ()=>{
 const spares = JSON.stringify(spare)
 const arrays = JSON.stringify(array)
 try {
-const data = await request('https://azam-app-tj-js.pl/api/order','POST',{...form, spares, arrays})
+const data = await request('/api/order','POST',{...form, spares, arrays})
 message(data.message)
 setTimeout(()=>{
 setForm({ name:'', phone:'', address:'', myMessage:''})

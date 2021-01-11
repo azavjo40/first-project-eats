@@ -9,7 +9,7 @@ const [show, setShow] = useState(true);
 const history = useHistory()
 const handleClose = () =>{
 setShow(false)
-history.push('https://azam-app-tj-js.pl/menu')
+history.push('/menu')
 }
 const auth = useContext(AuthContext)
 const message = useMesaage()

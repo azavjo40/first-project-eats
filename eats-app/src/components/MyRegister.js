@@ -30,7 +30,7 @@ clearError()
 
 const registerHandler = async ()=>{
 try {
-const data = await request('https://azam-app-tj-js.pl/api/auth/register','POST',{...form})
+const data = await request('/api/auth/register','POST',{...form})
 message(data.message)
 setForm({ name: '', surname: '', email: '', password: '', phone: ''})
 
